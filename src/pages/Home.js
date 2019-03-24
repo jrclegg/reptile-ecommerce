@@ -1,5 +1,4 @@
 import React from 'react'
-import Nav from '../components/Nav'
 import styled from 'styled-components'
 import Image from '../components/Image.js'
 import mouse from '../assets/mouseother.jpg'
@@ -37,7 +36,6 @@ class Home extends React.PureComponent {
     render(){
         return(
             <div>
-                <Nav/>
                 <StyledTitle>We Find The Best Deals For All Your Reptile Supplies</StyledTitle>
                 <Parent>
                     <div>
