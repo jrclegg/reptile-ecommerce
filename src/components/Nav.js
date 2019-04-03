@@ -9,14 +9,14 @@ const StyledNav = styled.nav`
 `;
 
 const StyledTitle = styled.h2`
-  @media (max-width: 768px) {
     font-size: 22px;
     display: inline-block;
-  }
+    margin-left: 2%;
 `;
 const Logo = styled.img`
   width: 60px;
   height: 60px;
+  float: left;
 `;
 const NavContainer = styled.div`
 
