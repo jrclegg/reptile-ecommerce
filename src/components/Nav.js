@@ -3,29 +3,20 @@ import styled from "styled-components";
 import placeholder from "../assets/placeholder.png";
 import { NavLink } from "react-router-dom";
 
-const StyledNav = styled.nav`
+const Header = styled.div`
   background: ${props => props.theme.colors.default};
   display: block;
-`;
-
-const StyledTitle = styled.h2`
-    font-size: 22px;
-    display: inline-block;
-    margin-left: 2%;
-`;
+`
+const MainTitle = styled.h2`
+  font-size: 22px;
+  display: inline-block;
+  margin-left: 2%;
+`
 const Logo = styled.img`
   width: 60px;
   height: 60px;
   float: left;
-`;
-const NavContainer = styled.div`
-
-`;
-
-const NavMenu = styled.ul`
-  @media (max-width: 768px) {
-  }
-`;
+`
 const NavItem = styled(NavLink)`
   font-size: 20px;
   text-decoration: none;
@@ -37,16 +28,18 @@ const NavItem = styled(NavLink)`
     margin-top: 15px;
     padding-bottom: 10px;
   }
-`;
-
-const ToggleDiv = styled.div`
+`
+const NavToggle = styled.div`
   float: right;
   margin: 10px;
   box-sizing: border-box;
   color: black;
   font-size: 30px;
   cursor: pointer;
-`;
+  :focus {
+    border: solid 1px blue;
+  }
+`
 class Nav extends React.Component {
   constructor(props) {
     super(props)
@@ -54,26 +47,29 @@ class Nav extends React.Component {
        showMenu: false
     }
   }
+  componentDidMount(){
+    document.getElementById('navToggle').focus();
+  }
   showMenu() {
-      this.setState({ showMenu: !this.state.showMenu });
+    this.setState({ showMenu: !this.state.showMenu });
   }
   render() {
     let { showMenu } = this.state
     return (
-      <StyledNav>
+      <Header>
         <Logo src={placeholder} />
-        <StyledTitle>CompareTheReptile.com</StyledTitle>
-        <ToggleDiv className="fa fa-bars menu" onClick={(event) => this.showMenu(event)}>
-        </ToggleDiv>
-        <NavContainer>
-            {showMenu &&
-            <NavMenu>
-              <NavItem to="/frozenfood">Frozen Food</NavItem>
-              <NavItem to="/livefood">Livefood</NavItem>
-            </NavMenu>
-            }
-        </NavContainer>
-      </StyledNav>
+        <MainTitle>CompareTheReptile.com</MainTitle>
+        <NavToggle id="navToggle" tabIndex="1" className="fa fa-bars menu" onClick={(event) => this.showMenu(event)}>
+        </NavToggle>
+        <nav>
+          {showMenu &&
+            <ul>
+              <NavItem tabIndex="2" to="/frozenfood">Frozen Food</NavItem>
+              <NavItem tabIndex="3" to="/livefood">Livefood</NavItem>
+            </ul>
+          }
+        </nav>
+      </Header>
     );
   }
 }
