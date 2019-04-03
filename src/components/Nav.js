@@ -41,8 +41,7 @@ const NavItem = styled(NavLink)`
 
 const ToggleDiv = styled.div`
   float: right;
-  margin-top: -70px;
-  margin-right: 25px;
+  margin: 10px;
   box-sizing: border-box;
   color: black;
   font-size: 30px;
@@ -64,9 +63,9 @@ class Nav extends React.Component {
       <StyledNav>
         <Logo src={placeholder} />
         <StyledTitle>CompareTheReptile.com</StyledTitle>
+        <ToggleDiv className="fa fa-bars menu" onClick={(event) => this.showMenu(event)}>
+        </ToggleDiv>
         <NavContainer>
-          <ToggleDiv className="fa fa-bars menu" onClick={(event) => this.showMenu(event)}>
-          </ToggleDiv>
             {showMenu &&
             <NavMenu>
               <NavItem to="/frozenfood">Frozen Food</NavItem>
