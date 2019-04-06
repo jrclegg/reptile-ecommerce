@@ -47,9 +47,7 @@ class Nav extends React.Component {
        showMenu: false
     }
   }
-  componentDidMount(){
-    document.getElementById('navToggle').focus();
-  }
+  
   showMenu() {
     this.setState({ showMenu: !this.state.showMenu });
   }
@@ -57,15 +55,15 @@ class Nav extends React.Component {
     let { showMenu } = this.state
     return (
       <Header>
-        <Logo src={placeholder} />
+        <Logo alt="logo" src={placeholder} />
         <MainTitle>CompareTheReptile.com</MainTitle>
-        <NavToggle id="navToggle" tabIndex="1" className="fa fa-bars menu" onClick={(event) => this.showMenu(event)}>
+        <NavToggle id="navToggle" tabIndex="0" className="fa fa-bars menu" onClick={(event) => this.showMenu(event)}>
         </NavToggle>
         <nav>
           {showMenu &&
             <ul>
-              <NavItem tabIndex="2" to="/frozenfood">Frozen Food</NavItem>
-              <NavItem tabIndex="3" to="/livefood">Livefood</NavItem>
+              <NavItem tabIndex="1" to="/frozenfood">Frozen Food</NavItem>
+              <NavItem tabIndex="2" to="/livefood">Livefood</NavItem>
             </ul>
           }
         </nav>
