@@ -41,6 +41,13 @@ class Pinkies extends React.Component {
             <Image src={mouse}></Image>
         </Parent>
         <div>
+            <div>
+                <button>All</button>
+                <button>Single</button>
+                <button>Pack of 10</button>
+                <button>Pack of 25</button>
+                <button>Pack of 100</button>
+            </div>
             <SubTitle>{item.product_name} (Single)</SubTitle>
             {item.retailers.map(retailer =>
                 <ul>
