@@ -16,28 +16,14 @@ const FrozenLink = styled(Link)`
 `
 
 class FrozenFood extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-       products: []
-    }
-  }
-
-  componentDidMount() {
-    data().then(data=>{ 
-      this.setState({
-        products: data
-      })
-    });
-  }
   render() {
     return (
       <div>
       <Parent>
-        <Link to="/Mice/Pinkies.js"><Image src={mouse} alt="mouse"/></Link>
-        <Link to="/Mice/LargePinkies.js"><Image src={mouse} alt="mouse"/></Link>
-        <FrozenLink to="/Mice/Pinkies.js">Pinkies</FrozenLink>
-        <FrozenLink to="/Mice/LargePinkies.js">Large Pinkies</FrozenLink>
+        <Link to="/Mice/Pinkies"><Image src={mouse} alt="mouse"/></Link>
+        <Link to="/Mice/LargePinkies"><Image src={mouse} alt="mouse"/></Link>
+        <FrozenLink to="/Mice/Pinkies">Pinkies</FrozenLink>
+        <FrozenLink to="/Mice/LargePinkies">Large Pinkies</FrozenLink>
       </Parent>
       <Parent>
         <Link to="/Mice/Fuzzies.js"><Image src={mouse} alt="mouse"/></Link>
@@ -57,31 +43,31 @@ class FrozenFood extends React.Component {
         <FrozenLink to="/Mice/LargeMice">Large Mice</FrozenLink>
         <FrozenLink to="Mice/ExtraLargeMice.js">Extra Large Mice</FrozenLink>
       </Parent>
+      <Parent>
+        <Image src={mouse} alt="mouse"/>
+        <Image src={mouse} alt="mouse"/>
+        <FrozenLink to="/Rats/RatPups">Rat Pups</FrozenLink>
+        <FrozenLink to="/Rats/RatFuzzies">Rat Fuzzies</FrozenLink>
+      </Parent>
+      <Parent>
+        <Image src={mouse} alt="mouse"/>
+        <Image src={mouse} alt="mouse"/>
+        <FrozenLink to="/Rats/SmallWeaners">Small Weaner Rats</FrozenLink>
+        <FrozenLink to="/Rats/LargeWeaners">Large Weaner Rats</FrozenLink>
+      </Parent>
+      <Parent>
+        <Image src={mouse} alt="mouse"/>
+        <Image src={mouse} alt="mouse"/>
+        <FrozenLink to="/Rats/SmallRats">Small Rats</FrozenLink>
+        <FrozenLink to="/Rats/LargeRats">Large Rats</FrozenLink>
+      </Parent>
+      <Parent>
+        <Image src={mouse} alt="mouse"/>
+        <Image src={mouse} alt="mouse"/>
+        <FrozenLink to="/Rats/ExtraLargeRats">Extra Large Rats</FrozenLink>
+        <FrozenLink to="/Rats/GiantRats">Giant Rats</FrozenLink>
+      </Parent>
       {/* <Parent>
-        <Image src={mouse} alt="mouse"/>
-        <Image src={mouse} alt="mouse"/>
-        <FrozenLink>Rat Pups</FrozenLink>
-        <FrozenLink>Rat Fuzzies</FrozenLink>
-      </Parent>
-      <Parent>
-        <Image src={mouse} alt="mouse"/>
-        <Image src={mouse} alt="mouse"/>
-        <FrozenLink>Small Weaner Rats</FrozenLink>
-        <FrozenLink>Large Weaner Rats</FrozenLink>
-      </Parent>
-      <Parent>
-        <Image src={mouse} alt="mouse"/>
-        <Image src={mouse} alt="mouse"/>
-        <FrozenLink>Small Rats</FrozenLink>
-        <FrozenLink>Large Rats</FrozenLink>
-      </Parent>
-      <Parent>
-        <Image src={mouse} alt="mouse"/>
-        <Image src={mouse} alt="mouse"/>
-        <FrozenLink>Extra Large Rats</FrozenLink>
-        <FrozenLink>Giant Rats</FrozenLink>
-      </Parent>
-      <Parent>
         <Image src={mouse} alt="mouse"/>
         <Image src={mouse} alt="mouse"/>
         <FrozenLink>Small Multimammate Mice</FrozenLink>

@@ -7,6 +7,8 @@ import Nav from './components/Nav'
 import Home from './pages/Home'
 import FrozenFood from './pages/FrozenFood'
 import Livefood from './pages/Livefood'
+import Pinkies from './pages/Mice/Pinkies'
+import LargePinkies from './pages/Mice/LargePinkies'
 import './App.css';
 
 class App extends Component {
@@ -17,6 +19,8 @@ class App extends Component {
             <Route exact path="/" component={Home}/>
             <Route path="/frozenfood" component={FrozenFood}/>
             <Route path="/livefood" component={Livefood}/>
+            <Route path="/mice/pinkies" component={Pinkies}/>
+            <Route path="/mice/largepinkies" component={LargePinkies}/>
       </HashRouter>
     );
   }
