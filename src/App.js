@@ -10,6 +10,7 @@ import Livefood from './pages/Livefood'
 import Pinkies from './pages/Mice/Pinkies'
 import LargePinkies from './pages/Mice/LargePinkies'
 import Fuzzies from './pages/Mice/Fuzzies'
+import Hoppers from './pages/Mice/Hoppers'
 import './App.css';
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path="/mice/pinkies" component={Pinkies}/>
             <Route path="/mice/largepinkies" component={LargePinkies}/>
             <Route path="/mice/fuzzies" component={Fuzzies}/>
+            <Route path="/mice/hoppers" component={Hoppers}/>
       </HashRouter>
     );
   }
