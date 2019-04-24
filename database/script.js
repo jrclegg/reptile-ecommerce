@@ -32,12 +32,12 @@ app.get('/projects', function(request, response){
             "product_id": "ProductID",
             "product_name": "ProductName",
             "product_weight": "ProductWeight",
-            "$group[retailers](CompanyID)": {
-              "company_id": "CompanyID",
-              "company_name": "CompanyName",
-              "$group[packs](Quantity)": {
-                "quantity": "Quantity",
-                "price": "Price"
+            "$group[packs](Quantity)":  {
+              "quantity": "Quantity",
+              "$group[retailers](CompanyID)":{
+                "price": "Price",
+                "company_id": "CompanyID",
+                "company_name": "CompanyName",
               }
             }
           }
