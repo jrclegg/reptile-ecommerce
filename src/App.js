@@ -9,6 +9,7 @@ import FrozenFood from './pages/FrozenFood'
 import Livefood from './pages/Livefood'
 import Pinkies from './pages/Mice/Pinkies'
 import LargePinkies from './pages/Mice/LargePinkies'
+import Fuzzies from './pages/Mice/Fuzzies'
 import './App.css';
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
             <Route path="/livefood" component={Livefood}/>
             <Route path="/mice/pinkies" component={Pinkies}/>
             <Route path="/mice/largepinkies" component={LargePinkies}/>
+            <Route path="/mice/fuzzies" component={Fuzzies}/>
       </HashRouter>
     );
   }
