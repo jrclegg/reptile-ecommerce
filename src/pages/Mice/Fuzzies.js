@@ -3,6 +3,9 @@ import {data} from '../../components/GetData';
 import styled from 'styled-components'
 import Image from '../../components/Image.js'
 import mouse from '../../assets/mouseother.jpg'
+import QuantityTitle from '../../components/QuantityTitle'
+import QuantityDescription from '../../components/QuantityDescription'
+
 
 const MainTitle = styled.h2`
     text-align: center;
@@ -40,21 +43,18 @@ class Fuzzies extends React.Component {
                     <Image src={mouse}></Image>
                 </Parent>
                 <div>
-                    <div>
-                        <button>All</button>
-                        <button>Single</button>
-                        <button>Pack of 10</button>
-                        <button>Pack of 25</button>
-                        <button>Pack of 100</button>
-                    </div>
-                    <SubTitle>{item.product_name} (Single)</SubTitle>
                     {item.packs.map(pack =>
-                        <ul>
+                        <div>
+                            <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
                             {pack.retailers
                                 .sort((a,b) => a.price - b.price)
-                                .map(retailer => <li>{retailer.company_name}{retailer.price}</li>)
+                                .map(retailer =>
+                                    <div>
+                                        <QuantityDescription>{retailer.company_name} {retailer.price.toFixed(2)}</QuantityDescription>
+                                    </div>
+                                )
                             }
-                        </ul>
+                        </div>
                     )}
                 </div>
             </div>
