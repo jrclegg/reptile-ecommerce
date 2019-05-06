@@ -71,18 +71,18 @@ class FrozenFood extends React.Component {
         <Image src={mouse} alt="mouse"/>
         <Image src={mouse} alt="mouse"/>
         <FrozenLink to="/Rats/GiantRats">Giant Rats</FrozenLink>
-      </Parent>
-      {/* <Parent>
-        <Image src={mouse} alt="mouse"/>
-        <Image src={mouse} alt="mouse"/>
-        <FrozenLink>Small Multimammate Mice</FrozenLink>
-        <FrozenLink>Large Multimammate Mice</FrozenLink>
+        <FrozenLink to="/Multis/Small">Small Multimammate Mice</FrozenLink>
       </Parent>
       <Parent>
         <Image src={mouse} alt="mouse"/>
         <Image src={mouse} alt="mouse"/>
-        <FrozenLink>Extra Large Multimammate Mice</FrozenLink>
-        <FrozenLink>Giant Multimammate Mice</FrozenLink>
+        <FrozenLink to="/Multis/Large">Large Multimammate Mice</FrozenLink>
+        <FrozenLink to="/Multis/ExtraLarge">Extra Large Multimammate Mice</FrozenLink>
+      </Parent>
+      <Parent>
+        <Image src={mouse} alt="mouse"/>
+        <Image src={mouse} alt="mouse"/>
+        <FrozenLink to="/Multis/Giant">Giant Multimammate Mice</FrozenLink>
       </Parent>
       <Parent>
         <Image src={mouse} alt="mouse"/>
@@ -144,7 +144,7 @@ class FrozenFood extends React.Component {
         <FrozenLink>Large Quail</FrozenLink>
         <FrozenLink>Chicks</FrozenLink>
       </Parent>
-      <Parent>
+      {/* <Parent>
         <Image src={mouse} alt="mouse"/>
         <Image src={mouse} alt="mouse"/>
         <FrozenLink>Chickens</FrozenLink>

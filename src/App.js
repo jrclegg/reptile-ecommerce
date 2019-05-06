@@ -25,6 +25,10 @@ import MediumRats from './pages/Rats/MediumRats';
 import LargeRats from './pages/Rats/LargeRats';
 import ExtraLargeRats from './pages/Rats/ExtraLargeRats';
 import GiantRats from './pages/Rats/GiantRats';
+import SmallMultis from './pages/Multimammates/SmallMultis';
+import LargeMultis from './pages/Multimammates/LargeMultis';
+import ExtraLargeMultis from './pages/Multimammates/ExtraLargeMultis';
+
 
 class App extends Component {
   render() {
@@ -50,7 +54,10 @@ class App extends Component {
             <Route path="/rats/mediumrats" component={MediumRats}/>
             <Route path="/rats/largerats" component={LargeRats}/>
             <Route path="/rats/extralargerats" component={ExtraLargeRats}/>
-             <Route path="/rats/giantrats" component={GiantRats}/>
+            <Route path="/rats/giantrats" component={GiantRats}/>
+            <Route path="/multis/small" component={SmallMultis}/>
+            <Route path="/multis/large" component={LargeMultis}/>
+            <Route path="/multis/extralarge" component={ExtraLargeMultis}/>
       </HashRouter>
     );
   }

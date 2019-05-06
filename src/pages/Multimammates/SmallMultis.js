@@ -5,8 +5,6 @@ import Image from '../../components/Image.js'
 import mouse from '../../assets/mouseother.jpg'
 import QuantityTitle from '../../components/QuantityTitle'
 import QuantityDescription from '../../components/QuantityDescription'
-import QuantityInput from '../../components/QuantityInput'
-import BasketButton from '../../components/BasketButton'
 
 const MainTitle = styled.h2`
     text-align: center;
@@ -20,7 +18,7 @@ const Parent = styled.div`
     grid-template-columns: 1fr;
 `
 
-class Pinkies extends React.Component {
+class SmallMultis extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -51,7 +49,7 @@ class Pinkies extends React.Component {
                                 .sort((a,b) => a.price - b.price)
                                 .map(retailer =>
                                     <div>
-                                        <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)}<QuantityInput/><BasketButton>Add To Basket</BasketButton></QuantityDescription>
+                                        <QuantityDescription>{retailer.company_name} {retailer.price.toFixed(2)}</QuantityDescription>
                                     </div>
                                 )
                             }
@@ -62,9 +60,9 @@ class Pinkies extends React.Component {
         );
         return (
             <div>
-                {this.items[0]}
+                {this.items[17]}
             </div>
         )
     }
 }
-export default Pinkies
+export default SmallMultis
