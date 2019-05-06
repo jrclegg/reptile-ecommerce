@@ -16,6 +16,15 @@ import SmallMice from './pages/Mice/SmallMice';
 import MediumMice from './pages/Mice/MediumMice';
 import LargeMice from './pages/Mice/LargeMice';
 import ExtraLargeMice from './pages/Mice/ExtraLargeMice';
+import RatPups from './pages/Rats/RatPups';
+import RatFuzzies from './pages/Rats/RatFuzzies';
+import SmallWeanerRats from './pages/Rats/SmallWeanerRats';
+import LargeWeanerRats from './pages/Rats/LargeWeanerRats';
+import SmallRats from './pages/Rats/SmallRats';
+import MediumRats from './pages/Rats/MediumRats';
+import LargeRats from './pages/Rats/LargeRats';
+import ExtraLargeRats from './pages/Rats/ExtraLargeRats';
+import GiantRats from './pages/Rats/GiantRats';
 
 class App extends Component {
   render() {
@@ -33,6 +42,15 @@ class App extends Component {
             <Route path="/mice/mediummice" component={MediumMice}/>
             <Route path="/mice/largemice" component={LargeMice}/>
             <Route path="/mice/extralargemice" component={ExtraLargeMice}/>
+            <Route path="/rats/ratpups" component={RatPups}/>
+            <Route path="/rats/ratfuzzies" component={RatFuzzies}/>
+            <Route path="/rats/smallweaners" component={SmallWeanerRats}/>
+            <Route path="/rats/largeweaners" component={LargeWeanerRats}/>
+            <Route path="/rats/smallrats" component={SmallRats}/>
+            <Route path="/rats/mediumrats" component={MediumRats}/>
+            <Route path="/rats/largerats" component={LargeRats}/>
+            <Route path="/rats/extralargerats" component={ExtraLargeRats}/>
+             <Route path="/rats/giantrats" component={GiantRats}/>
       </HashRouter>
     );
   }
