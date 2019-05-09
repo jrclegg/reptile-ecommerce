@@ -5,6 +5,8 @@ import Image from '../../components/Image.js'
 import mouse from '../../assets/mouseother.jpg'
 import QuantityTitle from '../../components/QuantityTitle'
 import QuantityDescription from '../../components/QuantityDescription'
+import QuantityInput from '../../components/QuantityInput'
+import BasketButton from '../../components/BasketButton'
 
 
 const MainTitle = styled.h2`
@@ -43,14 +45,14 @@ class Fuzzies extends React.Component {
                     <Image src={mouse}></Image>
                 </Parent>
                 <div>
-                    {item.packs.map(pack =>
+                {item.packs.map(pack =>
                         <div>
                             <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
                             {pack.retailers
                                 .sort((a,b) => a.price - b.price)
                                 .map(retailer =>
                                     <div>
-                                        <QuantityDescription>{retailer.company_name} {retailer.price.toFixed(2)}</QuantityDescription>
+                                        <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)}<QuantityInput/><BasketButton>Add To Basket</BasketButton></QuantityDescription>
                                     </div>
                                 )
                             }
