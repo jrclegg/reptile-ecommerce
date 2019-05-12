@@ -28,6 +28,18 @@ import GiantRats from './pages/Rats/GiantRats';
 import SmallMultis from './pages/Multimammates/SmallMultis';
 import LargeMultis from './pages/Multimammates/LargeMultis';
 import ExtraLargeMultis from './pages/Multimammates/ExtraLargeMultis';
+import MiniGuineaPigs from './pages/GuineaPigs/MiniGuineaPigs';
+import SmallGuineaPigs from './pages/GuineaPigs/SmallGuineaPigs';
+import MediumGuineaPigs from './pages/GuineaPigs/MediumGuineaPigs';
+import LargeGuineaPigs from './pages/GuineaPigs/LargeGuineaPigs';
+import ExtraLargeGuineaPigs from './pages/GuineaPigs/ExtraLargeGuineaPigs';
+import DayOldRabbits from './pages/Rabbits/DayOldRabbits';
+import MiniRabbits from './pages/Rabbits/MiniRabbits';
+import SmallRabbits from './pages/Rabbits/SmallRabbits';
+import MediumRabbits from './pages/Rabbits/MediumRabbits';
+import LargeRabbits from './pages/Rabbits/LargeRabbits';
+import ExtraLargeRabbits from './pages/Rabbits/ExtraLargeRabbits';
+import GiantRabbits from './pages/Rabbits/GiantRabbits';
 
 
 class App extends Component {
@@ -58,6 +70,18 @@ class App extends Component {
             <Route path="/multis/small" component={SmallMultis}/>
             <Route path="/multis/large" component={LargeMultis}/>
             <Route path="/multis/extralarge" component={ExtraLargeMultis}/>
+            <Route path="/guineapigs/miniguineapigs" component={MiniGuineaPigs}/>
+            <Route path="/guineapigs/smallguineapigs" component={SmallGuineaPigs}/>
+            <Route path="/guineapigs/mediumguineapigs" component={MediumGuineaPigs}/>
+            <Route path="/guineapigs/largeguineapigs" component={LargeGuineaPigs}/>
+            <Route path="/guineapigs/extralargeguineapigs" component={ExtraLargeGuineaPigs}/>
+            <Route path="/rabbits/dayoldrabbits" component={DayOldRabbits}/>
+            <Route path="/rabbits/minirabbits" component={MiniRabbits}/>
+            <Route path="/rabbits/smallrabbits" component={SmallRabbits}/>
+            <Route path="/rabbits/mediumrabbits" component={MediumRabbits}/>
+            <Route path="/rabbits/largerabbits" component={LargeRabbits}/>
+            <Route path="/rabbits/extralargerabbits" component={ExtraLargeRabbits}/>
+            <Route path="/rabbits/giantrabbits" component={GiantRabbits}/>
       </HashRouter>
     );
   }

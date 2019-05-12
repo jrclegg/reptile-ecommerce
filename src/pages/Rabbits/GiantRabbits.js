@@ -1,3 +1,4 @@
+
 import React from 'react'
 import {data} from '../../components/GetData';
 import styled from 'styled-components'
@@ -20,7 +21,7 @@ const Parent = styled.div`
     grid-template-columns: 1fr;
 `
 
-class SmallMultis extends React.Component {
+class GiantRabbits extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -62,9 +63,9 @@ class SmallMultis extends React.Component {
         );
         return (
             <div>
-                {this.items[17]}
+                {this.items[22]}
             </div>
         )
     }
 }
-export default SmallMultis
+export default GiantRabbits

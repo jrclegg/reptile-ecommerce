@@ -20,7 +20,7 @@ const Parent = styled.div`
     grid-template-columns: 1fr;
 `
 
-class SmallMultis extends React.Component {
+class MediumRabbits extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -62,9 +62,9 @@ class SmallMultis extends React.Component {
         );
         return (
             <div>
-                {this.items[17]}
+                {this.items[22]}
             </div>
         )
     }
 }
-export default SmallMultis
+export default MediumRabbits
