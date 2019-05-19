@@ -44,15 +44,25 @@ class Nav extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-       showMenu: false
+       showMenu: false,
+       showFrozenItems: false,
+       showLiveItems: false
     }
   }
   
   showMenu() {
     this.setState({ showMenu: !this.state.showMenu });
   }
+
+  toggleDropdown(event) {
+    if (event.target.id === 'frozenFood'){
+      this.setState({ showFrozenItems: !this.state.showFrozenItems });
+    } else if (event.target.id === 'livefood'){
+      this.setState({ showLiveItems: !this.state.showLiveItems });
+    }
+  }
   render() {
-    let { showMenu } = this.state
+    let { showMenu, showFrozenItems, showLiveItems } = this.state
     return (
       <Header>
         <Logo alt="logo" src={placeholder} />
@@ -62,8 +72,30 @@ class Nav extends React.Component {
         <nav>
           {showMenu &&
             <ul>
-              <NavItem tabIndex="1" to="/frozenfood">Frozen Food</NavItem>
-              <NavItem tabIndex="2" to="/livefood">Livefood</NavItem>
+              <NavItem id="frozenFood" tabIndex="1" to="/frozenfood" onClick={(event) => this.toggleDropdown(event)}>
+                Frozen Food
+                  {
+                    showFrozenItems &&
+                    <React.Fragment>
+                      <NavItem to="/mice">Mice</NavItem>
+                      <NavItem to="/rats">Rats</NavItem>
+                      <NavItem to="/multimammates">Multimammate Mice</NavItem>
+                      <NavItem to="/guineapigs">Guinea Pigs</NavItem>
+                      <NavItem to="/rabbits">Rabbits</NavItem>
+                    </React.Fragment>
+                  }
+              </NavItem>
+              <NavItem id="livefood" tabIndex="2" to="/livefood" onClick={(event) => this.toggleDropdown(event)}>
+                Livefood
+                {
+                    showLiveItems &&
+                    <React.Fragment>
+                      <NavItem to="/locusts">Locusts</NavItem>
+                      <NavItem to="/browncrickets">Brown Crickets</NavItem>
+                      <NavItem to="/blackcrickets">Black Crickets</NavItem>
+                    </React.Fragment>
+                }
+              </NavItem>
             </ul>
           }
         </nav>
