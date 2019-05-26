@@ -33,6 +33,7 @@ import SmallGuineaPigs from './pages/GuineaPigs/SmallGuineaPigs';
 import MediumGuineaPigs from './pages/GuineaPigs/MediumGuineaPigs';
 import LargeGuineaPigs from './pages/GuineaPigs/LargeGuineaPigs';
 import ExtraLargeGuineaPigs from './pages/GuineaPigs/ExtraLargeGuineaPigs';
+import Rabbits from './pages/Rabbits/Rabbit';
 import DayOldRabbits from './pages/Rabbits/DayOldRabbits';
 import MiniRabbits from './pages/Rabbits/MiniRabbits';
 import SmallRabbits from './pages/Rabbits/SmallRabbits';
@@ -40,6 +41,14 @@ import MediumRabbits from './pages/Rabbits/MediumRabbits';
 import LargeRabbits from './pages/Rabbits/LargeRabbits';
 import ExtraLargeRabbits from './pages/Rabbits/ExtraLargeRabbits';
 import GiantRabbits from './pages/Rabbits/GiantRabbits';
+import Mice from './pages/Mice/Mice';
+import Rats from './pages/Rats/Rats';
+import Multimammates from './pages/Multimammates/Multimammates';
+import GuineaPigs from './pages/GuineaPigs/GuineaPig';
+import Gerbils from './pages/Gerbils/Gerbil';
+import Hamsters from './pages/Hamsters/Hamster';
+import Chicks from './pages/Chicks/Chick';
+import Quail from './pages/Quail/Quail';
 
 
 class App extends Component {
@@ -50,6 +59,7 @@ class App extends Component {
             <Route exact path="/" component={Home}/>
             <Route path="/frozenfood" component={FrozenFood}/>
             <Route path="/livefood" component={Livefood}/>
+            <Route exact path="/mice/" component={Mice}/>
             <Route path="/mice/pinkies" component={Pinkies}/>
             <Route path="/mice/largepinkies" component={LargePinkies}/>
             <Route path="/mice/fuzzies" component={Fuzzies}/>
@@ -58,6 +68,7 @@ class App extends Component {
             <Route path="/mice/mediummice" component={MediumMice}/>
             <Route path="/mice/largemice" component={LargeMice}/>
             <Route path="/mice/extralargemice" component={ExtraLargeMice}/>
+            <Route exact path="/rats" component={Rats}/>
             <Route path="/rats/ratpups" component={RatPups}/>
             <Route path="/rats/ratfuzzies" component={RatFuzzies}/>
             <Route path="/rats/smallweaners" component={SmallWeanerRats}/>
@@ -67,14 +78,17 @@ class App extends Component {
             <Route path="/rats/largerats" component={LargeRats}/>
             <Route path="/rats/extralargerats" component={ExtraLargeRats}/>
             <Route path="/rats/giantrats" component={GiantRats}/>
+            <Route exact path="/multimammates" component={Multimammates}/>
             <Route path="/multis/small" component={SmallMultis}/>
             <Route path="/multis/large" component={LargeMultis}/>
             <Route path="/multis/extralarge" component={ExtraLargeMultis}/>
+            <Route exact path="/guineapigs" component={GuineaPigs}/>
             <Route path="/guineapigs/miniguineapigs" component={MiniGuineaPigs}/>
             <Route path="/guineapigs/smallguineapigs" component={SmallGuineaPigs}/>
             <Route path="/guineapigs/mediumguineapigs" component={MediumGuineaPigs}/>
             <Route path="/guineapigs/largeguineapigs" component={LargeGuineaPigs}/>
             <Route path="/guineapigs/extralargeguineapigs" component={ExtraLargeGuineaPigs}/>
+            <Route exact path="/rabbits" component={Rabbits}/>
             <Route path="/rabbits/dayoldrabbits" component={DayOldRabbits}/>
             <Route path="/rabbits/minirabbits" component={MiniRabbits}/>
             <Route path="/rabbits/smallrabbits" component={SmallRabbits}/>
@@ -82,6 +96,10 @@ class App extends Component {
             <Route path="/rabbits/largerabbits" component={LargeRabbits}/>
             <Route path="/rabbits/extralargerabbits" component={ExtraLargeRabbits}/>
             <Route path="/rabbits/giantrabbits" component={GiantRabbits}/>
+            <Route path="/gerbils" component={Gerbils}/>
+            <Route path="/hamsters" component={Hamsters}/>
+            <Route path="/chicks" component={Chicks}/>
+            <Route path="/quail" component={Quail}/>
       </HashRouter>
     );
   }
