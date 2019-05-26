@@ -13,6 +13,7 @@ const MainTitle = styled.h2`
   margin-left: 2%;
   color: ${props => props.theme.colors.secondary};
 `
+
 const Logo = styled.img`
   width: 60px;
   height: 60px;
@@ -79,12 +80,17 @@ class Nav extends React.Component {
       this.setState({ showLiveItems: !this.state.showLiveItems });
     }
   }
+
+
+
   render() {
     let { showMenu, showFrozenItems, showLiveItems } = this.state
     return (
       <Header>
         <Logo alt="logo" src={placeholder} />
-        <MainTitle>CompareTheReptile.com</MainTitle>
+        <NavLink to="/">
+          <MainTitle>CompareTheReptile.com</MainTitle>
+        </NavLink>
         <NavToggle id="navToggle" tabIndex="0" className="fa fa-bars menu" onClick={(event) => this.showMenu(event)}>
         </NavToggle>
         <nav>
@@ -95,7 +101,7 @@ class Nav extends React.Component {
                   {
                     showFrozenItems === true ?
                     <React.Fragment>
-                      <NavItemArrow className="fas fa-chevron-up"/>
+                      <NavItemArrow className="fas fa-chevron-up" onClick={(event) => this.showMenu(event)}/>
                       <NavDropdown to="/mice">Mice</NavDropdown>
                       <NavDropdown to="/rats">Rats</NavDropdown>
                       <NavDropdown to="/multimammates">Multimammate Mice</NavDropdown>
