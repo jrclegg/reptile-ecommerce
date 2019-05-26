@@ -11,34 +11,52 @@ const MainTitle = styled.h2`
   font-size: 22px;
   display: inline-block;
   margin-left: 2%;
+  color: ${props => props.theme.colors.secondary};
 `
 const Logo = styled.img`
   width: 60px;
   height: 60px;
   float: left;
 `
+
+const NavList = styled.ul`
+  @media (max-width: 768px) {
+    
+  }
+`
 const NavItem = styled(NavLink)`
   font-size: 20px;
   text-decoration: none;
-  color: black;
+  color: ${props => props.theme.colors.secondary};
+  font-weight: 800;
   cursor: pointer;
   @media (max-width: 768px) {
     display: block;
-    text-align: center;
+    text-align: left;
     margin-top: 15px;
     padding-bottom: 10px;
+    margin-left: 10px;
+  }
+`
+const NavDropdown = styled(NavItem)`
+  @media (max-width: 768px) {
+   font-weight: normal;
   }
 `
 const NavToggle = styled.div`
   float: right;
   margin: 10px;
   box-sizing: border-box;
-  color: black;
+  color: ${props => props.theme.colors.secondary};
   font-size: 30px;
   cursor: pointer;
   :focus {
     border: solid 1px blue;
   }
+`
+const NavItemArrow = styled.i`
+  float: right;
+  margin-right: 30px;
 `
 class Nav extends React.Component {
   constructor(props) {
@@ -71,32 +89,40 @@ class Nav extends React.Component {
         </NavToggle>
         <nav>
           {showMenu &&
-            <ul>
+            <NavList>
               <NavItem id="frozenFood" tabIndex="1" to="/frozenfood" onClick={(event) => this.toggleDropdown(event)}>
                 Frozen Food
                   {
-                    showFrozenItems &&
+                    showFrozenItems === true ?
                     <React.Fragment>
-                      <NavItem to="/mice">Mice</NavItem>
-                      <NavItem to="/rats">Rats</NavItem>
-                      <NavItem to="/multimammates">Multimammate Mice</NavItem>
-                      <NavItem to="/guineapigs">Guinea Pigs</NavItem>
-                      <NavItem to="/rabbits">Rabbits</NavItem>
+                      <NavItemArrow className="fas fa-chevron-up"/>
+                      <NavDropdown to="/mice">Mice</NavDropdown>
+                      <NavDropdown to="/rats">Rats</NavDropdown>
+                      <NavDropdown to="/multimammates">Multimammate Mice</NavDropdown>
+                      <NavDropdown to="/guineapigs">Guinea Pigs</NavDropdown>
+                      <NavDropdown to="/rabbits">Rabbits</NavDropdown>
+                      <NavDropdown to="/hamsters">Hamsters</NavDropdown>
+                      <NavDropdown to="/gerbils">Gerbils</NavDropdown>
+                      <NavDropdown to="/chicks">Chicks</NavDropdown>
+                      <NavDropdown to="/quail">Quail</NavDropdown>
                     </React.Fragment>
+                    : <NavItemArrow className="fas fa-chevron-down"/>
                   }
               </NavItem>
               <NavItem id="livefood" tabIndex="2" to="/livefood" onClick={(event) => this.toggleDropdown(event)}>
                 Livefood
                 {
-                    showLiveItems &&
+                    showLiveItems === true ? 
                     <React.Fragment>
-                      <NavItem to="/locusts">Locusts</NavItem>
-                      <NavItem to="/browncrickets">Brown Crickets</NavItem>
-                      <NavItem to="/blackcrickets">Black Crickets</NavItem>
+                      <NavItemArrow className="fas fa-chevron-up"/>
+                      <NavDropdown to="/locusts">Locusts</NavDropdown>
+                      <NavDropdown to="/browncrickets">Brown Crickets</NavDropdown>
+                      <NavDropdown to="/blackcrickets">Black Crickets</NavDropdown>
                     </React.Fragment>
+                    : <NavItemArrow className="fas fa-chevron-down"/>
                 }
               </NavItem>
-            </ul>
+            </NavList>
           }
         </nav>
       </Header>
