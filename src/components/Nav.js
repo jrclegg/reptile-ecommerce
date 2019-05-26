@@ -39,6 +39,11 @@ const NavItem = styled(NavLink)`
     margin-left: 10px;
   }
 `
+const NavIcon = styled.i`
+  @media (max-width: 768px) {
+    font-size: 35px;
+  }
+`
 const NavDropdown = styled(NavItem)`
   @media (max-width: 768px) {
    font-weight: normal;
@@ -91,7 +96,11 @@ class Nav extends React.Component {
         <NavLink to="/">
           <MainTitle>CompareTheReptile.com</MainTitle>
         </NavLink>
-        <NavToggle id="navToggle" tabIndex="0" className="fa fa-bars menu" onClick={(event) => this.showMenu(event)}>
+        <NavToggle id="navToggle" tabIndex="0" onClick={(event) => this.showMenu(event)}>
+          { showMenu !== true ?
+          <NavIcon className="fa fa-bars menu"></NavIcon>
+          : <NavIcon className="fas fa-times"></NavIcon>
+          }
         </NavToggle>
         <nav>
           {showMenu &&
@@ -101,7 +110,7 @@ class Nav extends React.Component {
                   {
                     showFrozenItems === true ?
                     <React.Fragment>
-                      <NavItemArrow className="fas fa-chevron-up" onClick={(event) => this.showMenu(event)}/>
+                      <NavItemArrow className="fas fa-chevron-up"/>
                       <NavDropdown to="/mice">Mice</NavDropdown>
                       <NavDropdown to="/rats">Rats</NavDropdown>
                       <NavDropdown to="/multimammates">Multimammate Mice</NavDropdown>
