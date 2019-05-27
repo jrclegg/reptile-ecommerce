@@ -49,7 +49,13 @@ import Gerbils from './pages/Gerbils/Gerbil';
 import Hamsters from './pages/Hamsters/Hamster';
 import Chicks from './pages/Chicks/Chick';
 import Quail from './pages/Quail/Quail';
-
+import Locusts from './pages/Livefood/Locusts';
+import HatchlingLocusts from './pages/Livefood/HatchlingLocusts';
+import SmallLocusts from './pages/Livefood/SmallLocusts';
+import MediumLocusts from './pages/Livefood/MediumLocusts';
+import LargeLocusts from './pages/Livefood/LargeLocusts';
+import ExtraLargeLocusts from './pages/Livefood/ExtraLargeLocusts';
+import AdultLocusts from './pages/Livefood/AdultLocusts';
 
 class App extends Component {
   render() {
@@ -100,6 +106,13 @@ class App extends Component {
             <Route path="/hamsters" component={Hamsters}/>
             <Route path="/chicks" component={Chicks}/>
             <Route path="/quail" component={Quail}/>
+            <Route path="/locusts" component={Locusts}/>
+            <Route path="/locusts/hatchlings" component={HatchlingLocusts}/>
+            <Route path="/locusts/small" component={SmallLocusts}/>
+            <Route path="/locusts/medium" component={MediumLocusts}/>
+            <Route path="/locusts/large" component={LargeLocusts}/>
+            <Route path="/locusts/extralarge" component={ExtraLargeLocusts}/>
+            <Route path="/locusts/adult" component={AdultLocusts}/>
       </HashRouter>
     );
   }
