@@ -56,6 +56,14 @@ import MediumLocusts from './pages/Livefood/MediumLocusts';
 import LargeLocusts from './pages/Livefood/LargeLocusts';
 import ExtraLargeLocusts from './pages/Livefood/ExtraLargeLocusts';
 import AdultLocusts from './pages/Livefood/AdultLocusts';
+import BlackCrickets from './pages/Livefood/BlackCrickets';
+import MicroBlackCrickets from './pages/Livefood/MicroBlackCrickets';
+import SmallBlackCrickets from './pages/Livefood/SmallBlackCrickets';
+import MediumSmallBlackCrickets from './pages/Livefood/MediumSmallBlackCrickets';
+import MediumBlackCrickets from './pages/Livefood/MediumBlackCrickets';
+import LargeBlackCrickets from './pages/Livefood/MediumBlackCrickets';
+import ExtraLargeBlackCrickets from './pages/Livefood/MediumBlackCrickets';
+
 
 class App extends Component {
   render() {
@@ -106,13 +114,21 @@ class App extends Component {
             <Route path="/hamsters" component={Hamsters}/>
             <Route path="/chicks" component={Chicks}/>
             <Route path="/quail" component={Quail}/>
-            <Route path="/locusts" component={Locusts}/>
+            <Route exact path="/locusts" component={Locusts}/>
             <Route path="/locusts/hatchlings" component={HatchlingLocusts}/>
             <Route path="/locusts/small" component={SmallLocusts}/>
             <Route path="/locusts/medium" component={MediumLocusts}/>
             <Route path="/locusts/large" component={LargeLocusts}/>
             <Route path="/locusts/extralarge" component={ExtraLargeLocusts}/>
             <Route path="/locusts/adult" component={AdultLocusts}/>
+            <Route path="/locusts/adult" component={AdultLocusts}/>
+            <Route exact path="/blackcrickets" component={BlackCrickets}/>
+            <Route path="/blackcrickets/micro" component={MicroBlackCrickets}/>
+            <Route path="/blackcrickets/small" component={SmallBlackCrickets}/>
+            <Route path="/blackcrickets/mediumsmall" component={MediumSmallBlackCrickets}/>
+            <Route path="/blackcrickets/medium" component={MediumBlackCrickets}/>
+            <Route path="/blackcrickets/large" component={LargeBlackCrickets}/>
+            <Route path="/blackcrickets/extralarge" component={ExtraLargeBlackCrickets}/>
       </HashRouter>
     );
   }
