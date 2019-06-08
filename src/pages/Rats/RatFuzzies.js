@@ -1,50 +1,24 @@
-import React from 'react'
-import {data} from '../../components/GetData';
-import styled from 'styled-components'
+import React from 'react';
+import getProducts from './../../components/Product'
 import Image from '../../components/Image.js'
 import mouse from '../../assets/mouseother.jpg'
 import QuantityTitle from '../../components/QuantityTitle'
 import QuantityDescription from '../../components/QuantityDescription'
 import QuantityInput from '../../components/QuantityInput'
 import BasketButton from '../../components/BasketButton'
+import Parent from '../../components/Parent'
+import MainTitle from '../../components/MainTitle'
 
-const MainTitle = styled.h2`
-    text-align: center;
-`
-const SubTitle = styled.h3`
-    text-align: center;
-`
-const Parent = styled.div`
-    display: grid;
-    margin-top: 30px;
-    grid-template-columns: 1fr;
-`
-
-class RatFuzzies extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-           products: []
-        }
-    }
-    
-    componentDidMount() {
-        data().then(data=>{ 
-          this.setState({
-            products: data.products
-          })
-        });
-    }
-
-    render() {
-        this.items = this.state.products.map((item, key) =>
-            <div key={item.id}>
-                <MainTitle>{item.product_name}</MainTitle>
-                <Parent>
-                    <Image src={mouse}></Image>
-                </Parent>
-                <div>
-                {item.packs.map(pack =>
+const RatFuzziesList = ({ products}) => (
+    products.map((item, key) =>
+        <div key={item.id}>
+            {item.product_name === "Rat Fuzzies" ?
+                <React.Fragment>
+                    <MainTitle>{item.product_name}</MainTitle>
+                    <Parent>
+                        <Image src={mouse}></Image>
+                    </Parent>
+                    {item.packs.map(pack =>
                         <div>
                             <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
                             {pack.retailers
@@ -56,15 +30,14 @@ class RatFuzzies extends React.Component {
                                 )
                             }
                         </div>
-                )}
-                </div>
-            </div>
-        );
-        return (
-            <div>
-                {this.items[9]}
-            </div>
-        )
-    }
-}
+                    )}
+                </React.Fragment>
+                : ''
+            }
+        </div>
+    )
+);
+
+const RatFuzzies = getProducts(RatFuzziesList)
+
 export default RatFuzzies
