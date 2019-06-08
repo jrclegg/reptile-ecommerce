@@ -1,22 +1,14 @@
 
 import React from 'react';
 import getProducts from './../../components/Product'
-import styled from 'styled-components'
 import Image from '../../components/Image.js'
 import mouse from '../../assets/mouseother.jpg'
 import QuantityTitle from '../../components/QuantityTitle'
 import QuantityDescription from '../../components/QuantityDescription'
 import QuantityInput from '../../components/QuantityInput'
 import BasketButton from '../../components/BasketButton'
-
-const MainTitle = styled.h2`
-    text-align: center;
-`
-const Parent = styled.div`
-    display: grid;
-    margin-top: 30px;
-    grid-template-columns: 1fr;
-`
+import Parent from '../../components/Parent'
+import MainTitle from '../../components/MainTitle'
 
 const HoppersList = ({ products}) => (
     products.map((item, key) =>
