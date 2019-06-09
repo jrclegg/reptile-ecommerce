@@ -1,50 +1,43 @@
-import React from 'react'
-import {data} from '../../components/GetData';
-import styled from 'styled-components'
+import React from 'react';
+import getProducts from './../../components/Product'
 import Image from '../../components/Image.js'
 import mouse from '../../assets/mouseother.jpg'
-import { Link } from "react-router-dom";
+import QuantityTitle from '../../components/QuantityTitle'
+import QuantityDescription from '../../components/QuantityDescription'
+import QuantityInput from '../../components/QuantityInput'
+import BasketButton from '../../components/BasketButton'
+import Parent from '../../components/Parent'
+import MainTitle from '../../components/MainTitle'
 
-const Parent = styled.div`
-    display: grid;
-    margin-top: 30px;
-    grid-template-columns: 1fr 1fr;
-`
-const FrozenLink = styled(Link)`
-  font-size: 20px;
-  text-align: center;
-`
-
-class Quail extends React.Component {
-  render() {
-    return (
-      <div>
-      <Parent>
-        <Link to="/Mice/Pinkies"><Image src={mouse} alt="mouse"/></Link>
-        <Link to="/Mice/LargePinkies"><Image src={mouse} alt="mouse"/></Link>
-        <FrozenLink to="/Mice/Pinkies">Pinkies</FrozenLink>
-        <FrozenLink to="/Mice/LargePinkies">Large Pinkies</FrozenLink>
-      </Parent>
-      <Parent>
-        <Link to="/Mice/"><Image src={mouse} alt="mouse"/></Link>
-        <Link to="/Mice/Hoppers.js"><Image src={mouse} alt="mouse"/></Link>
-        <FrozenLink to="/Mice/Fuzzies">Fuzzies</FrozenLink>
-        <FrozenLink to="/Mice/Hoppers">Hoppers</FrozenLink>
-      </Parent>
-      <Parent>
-        <Link to="/Mice/SmallMice"><Image src={mouse} alt="mouse"/></Link>
-        <Link to="/Mice/MediumMice"><Image src={mouse} alt="mouse"/></Link>
-        <FrozenLink to="/Mice/SmallMice">Small Mice</FrozenLink>
-        <FrozenLink to="/Mice/MediumMice">Medium Mice</FrozenLink>
-      </Parent>
-      <Parent>
-        <Link to="/Mice/LargeMice"><Image src={mouse} alt="mouse"/></Link>
-        <Link to="Mice/ExtraLargeMice"><Image src={mouse} alt="mouse"/></Link>
-        <FrozenLink to="/Mice/LargeMice">Large Mice</FrozenLink>
-        <FrozenLink to="Mice/ExtraLargeMice">Extra Large Mice</FrozenLink>
-      </Parent>
-      </div>
+const QuailList = ({ products}) => (
+    products.map((item, key) =>
+        <div key={item.id}>
+            {item.product_name === "Large Quail" ?
+                <React.Fragment>
+                    <MainTitle>{item.product_name}</MainTitle>
+                    <Parent>
+                        <Image src={mouse}></Image>
+                    </Parent>
+                    {item.packs.map(pack =>
+                        <div>
+                            <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
+                            {pack.retailers
+                                .sort((a,b) => a.price - b.price)
+                                .map(retailer =>
+                                    <div>
+                                        <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)}<QuantityInput/><BasketButton>Add To Basket</BasketButton></QuantityDescription>
+                                    </div>
+                                )
+                            }
+                        </div>
+                    )}
+                </React.Fragment>
+                : ''
+            }
+        </div>
     )
-  }
-}
+);
+
+const Quail = getProducts(QuailList)
+
 export default Quail
