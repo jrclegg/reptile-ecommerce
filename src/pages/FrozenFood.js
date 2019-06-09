@@ -98,22 +98,22 @@ class FrozenFood extends React.Component {
         <FrozenLink to="/Rabbits/MiniRabbits">Mini Rabbits</FrozenLink>
       </Parent>
       <Parent>
-        <Image src={mouse} alt="mouse"/>
-        <Image src={mouse} alt="mouse"/>
-        <FrozenLink>Small Rabbits</FrozenLink>
-        <FrozenLink>Medium Rabbits</FrozenLink>
+        <Link to="/Rabbits/SmallRabbits"><Image src={mouse} alt="mouse"/></Link>
+        <Link to="/Rabbits/MediumRabbits"><Image src={mouse} alt="mouse"/></Link>
+        <FrozenLink to="/Rabbits/SmallRabbits">Small Rabbits</FrozenLink>
+        <FrozenLink to="/Rabbits/MediumRabbits">Medium Rabbits</FrozenLink>
       </Parent>
       <Parent>
-        <Image src={mouse} alt="mouse"/>
-        <Image src={mouse} alt="mouse"/>
-        <FrozenLink>Large Rabbits</FrozenLink>
-        <FrozenLink>Extra Large Rabbits</FrozenLink>
+        <Link to="/Rabbits/LargeRabbits"><Image src={mouse} alt="mouse"/></Link>
+        <Link to="/Rabbits/ExtraLargeRabbits"><Image src={mouse} alt="mouse"/></Link>
+        <FrozenLink to="/Rabbits/LargeRabbits">Large Rabbits</FrozenLink>
+        <FrozenLink to="/Rabbits/ExtraLargeRabbits">Extra Large Rabbits</FrozenLink>
       </Parent>
       <Parent>
-        <Image src={mouse} alt="mouse"/>
-        <Image src={mouse} alt="mouse"/>
-        <FrozenLink>Giant Rabbits</FrozenLink>
-        <FrozenLink>Small Quail</FrozenLink>
+        <Link to="/Rabbits/GiantRabbits"><Image src={mouse} alt="mouse"/></Link>
+        <Link to="/Rabbits/MiniRabbits"><Image src={mouse} alt="mouse"/></Link>
+        <FrozenLink to="/Rabbits/GiantRabbits">Giant Rabbits</FrozenLink>
+        <FrozenLink to="/Rabbits/MiniRabbits">Small Quail</FrozenLink>
       </Parent>
       {/* <Parent>
         <Image src={mouse} alt="mouse"/>
