@@ -1,14 +1,10 @@
 
 import React from 'react';
-import getProducts from './../../components/Product'
-import Image from '../../components/Image.js'
 import mouse from '../../assets/mouseother.jpg'
-import QuantityTitle from '../../components/QuantityTitle'
-import QuantityDescription from '../../components/QuantityDescription'
-import QuantityInput from '../../components/QuantityInput'
-import BasketButton from '../../components/BasketButton'
-import Parent from '../../components/Parent'
-import MainTitle from '../../components/MainTitle'
+import {Image, 
+    QuantityDescription, QuantityTitle, 
+    QuantityInput, BasketButton, 
+    Parent, MainTitle, getProducts} from './../../components/index'
 
 const HoppersList = ({ products}) => (
     products.map((item, key) =>
