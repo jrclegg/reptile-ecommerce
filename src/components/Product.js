@@ -15,8 +15,9 @@ const getProducts = (PassedComponent) => (
     }
 
     render() {
-      return <PassedComponent  {...this.props}
-      products={this.state.products} />
+      console.log(this.state.products)
+      return <PassedComponent {...this.props}
+      products={this.state.products} key={this.state.products.product_id} />
     }
   }
 )

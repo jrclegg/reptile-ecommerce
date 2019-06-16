@@ -7,7 +7,7 @@ import {Image,
 import mouse from '../../assets/mouseother.jpg'
 
 const FuzziesList = ({ products}) => (
-    products.map((item, key) =>
+    products.map((item) =>
         <div key={item.id}>
             {item.product_name === "Mouse Fuzzies" ?
                 <React.Fragment>
@@ -16,12 +16,12 @@ const FuzziesList = ({ products}) => (
                         <Image src={mouse}></Image>
                     </Parent>
                     {item.packs.map(pack =>
-                        <div>
+                        <div key={pack.quantity}>
                             <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
                             {pack.retailers
                                 .sort((a,b) => a.price - b.price)
                                 .map(retailer =>
-                                    <div>
+                                    <div key={retailer.company_id}>
                                         <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)}<QuantityInput/><BasketButton>Add To Basket</BasketButton></QuantityDescription>
                                     </div>
                                 )
