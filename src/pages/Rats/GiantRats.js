@@ -6,7 +6,7 @@ import {Image,
     Parent, MainTitle, getProducts} from './../../components/index'
 
 const GiantRatsList = ({ products}) => (
-    products.map((item, key) =>
+    products.map((item) =>
         <div key={item.id}>
             {item.product_name === "Giant Rats" ?
                 <React.Fragment>
