@@ -1,8 +1,7 @@
 import React from 'react';
 import {data} from './../components/GetData';
 
-const getProducts = (PassedComponent) => (
-  class getProducts extends React.Component {
+  class GetProducts extends React.Component {
     state = {
       products: []
     }
@@ -13,13 +12,11 @@ const getProducts = (PassedComponent) => (
           })
         });
     }
-
     render() {
-      console.log(this.state.products)
-      return <PassedComponent {...this.props}
-      products={this.state.products} key={this.state.products.product_id} />
+      return this.props.render(
+        this.state
+      );
     }
   }
-)
 
-export default getProducts
+export default GetProducts

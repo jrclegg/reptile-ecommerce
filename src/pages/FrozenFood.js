@@ -68,7 +68,7 @@ class FrozenFood extends React.Component {
         <FrozenLink to="/Rats/ExtraLargeRats">Extra Large Rats</FrozenLink>
       </Parent>
       <Parent>
-        <Link to="/Rats/GiantRats"><Image src={mouse} alt="mouse"/></Link>
+        <Link to="/Rats/GiantRats"><Image src={mouse} alt="mouse"/>Giant Rats</Link>
         <Link to="/Multis/Small"><Image src={mouse} alt="mouse"/></Link>
         <FrozenLink to="/Rats/GiantRats">Giant Rats</FrozenLink>
         <FrozenLink to="/Multis/Small">Small Multimammate Mice</FrozenLink>

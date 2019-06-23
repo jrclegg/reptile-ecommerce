@@ -43,6 +43,12 @@ class Rats extends React.Component {
         <FrozenLink to="/Rats/LargeRats">Large Rats</FrozenLink>
         <FrozenLink to="/Rats/ExtraLargeRats">Extra Large Rats</FrozenLink>
       </Parent>
+      <Parent>
+        <Link to="/Rats/GiantRats"><Image src={mouse} alt="mouse"/></Link>
+        <Link to="/Rats/GiantRats"><Image src={mouse} alt="mouse"/></Link>
+        <FrozenLink to="/Rats/GiantRats">Giant Rats</FrozenLink>
+        <FrozenLink to="/Rats/GiantRats">Giant Rats</FrozenLink>
+      </Parent>
       </div>
     )
   }
