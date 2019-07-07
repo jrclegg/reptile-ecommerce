@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import placeholder from "../assets/placeholder.png";
 import { NavLink } from "react-router-dom";
+import {scroller} from 'react-scroll';
+
+
 
 const Header = styled.div`
   background: ${props => props.theme.colors.default};
@@ -44,11 +47,13 @@ const NavIcon = styled.i`
     font-size: 35px;
   }
 `
-const NavDropdown = styled(NavItem)`
+const NavItemDropdown = styled(NavItem)`
   @media (max-width: 768px) {
    font-weight: normal;
   }
 `
+
+
 const NavToggle = styled.div`
   float: right;
   margin: 10px;
@@ -74,6 +79,15 @@ class Nav extends React.Component {
     }
   }
   
+  handleScroll() {
+    scroller.scrollTo('scroll-to-element', {
+      duration: 400,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+      offset: -10
+    })
+  }
+  
   showMenu() {
     this.setState({ showMenu: !this.state.showMenu });
   }
@@ -89,7 +103,13 @@ class Nav extends React.Component {
 
 
   render() {
-    let { showMenu, showFrozenItems, showLiveItems } = this.state
+    let { showMenu, showFrozenItems, showLiveItems} = this.state
+    const NavDropdown = props => {
+      return <NavItemDropdown 
+                to={props.url} 
+                onClick={(event)=>this.handleScroll(event)}
+              >{props.productTitle}</NavItemDropdown>;
+    }
     return (
       <Header>
         <Logo alt="logo" src={placeholder} />
@@ -111,15 +131,15 @@ class Nav extends React.Component {
                     showFrozenItems === true ?
                     <React.Fragment>
                       <NavItemArrow className="fas fa-chevron-up"/>
-                      <NavDropdown to="/mice">Mice</NavDropdown>
-                      <NavDropdown to="/rats">Rats</NavDropdown>
-                      <NavDropdown to="/multimammates">Multimammate Mice</NavDropdown>
-                      <NavDropdown to="/guineapigs">Guinea Pigs</NavDropdown>
-                      <NavDropdown to="/rabbits">Rabbits</NavDropdown>
-                      <NavDropdown to="/hamsters">Hamsters</NavDropdown>
-                      <NavDropdown to="/gerbils">Gerbils</NavDropdown>
-                      <NavDropdown to="/chicks">Chicks</NavDropdown>
-                      <NavDropdown to="/quail">Quail</NavDropdown>
+                      <NavDropdown url="/mice" productTitle="Mice" />
+                      <NavDropdown url="/rats" productTitle="Rats"/>
+                      <NavDropdown url="/multimammates" productTitle="Multimammates"/>
+                      <NavDropdown url="/guineapigs" productTitle="Guinea Pigs"/>
+                      <NavDropdown url="/rabbits" productTitle="Rabbits"/>
+                      <NavDropdown url="/hamsters" productTitle="Hamsters"/>
+                      <NavDropdown url="/gerbils" productTitle="Gerbils"/>
+                      <NavDropdown url="/chicks" productTitle="Chicks"/>
+                      <NavDropdown url="/quail" productTitle="Quail"/>
                     </React.Fragment>
                     : <NavItemArrow className="fas fa-chevron-down"/>
                   }
@@ -130,9 +150,9 @@ class Nav extends React.Component {
                     showLiveItems === true ? 
                     <React.Fragment>
                       <NavItemArrow className="fas fa-chevron-up"/>
-                      <NavDropdown to="/locusts">Locusts</NavDropdown>
-                      <NavDropdown to="/browncrickets">Brown Crickets</NavDropdown>
-                      <NavDropdown to="/blackcrickets">Black Crickets</NavDropdown>
+                      <NavDropdown url="/locusts" productTitle="Locusts"/>
+                      <NavDropdown url="/browncrickets" productTitle="Brown Crickets"/>
+                      <NavDropdown url="/blackcrickets" productTitle="Black Crickets"/>
                     </React.Fragment>
                     : <NavItemArrow className="fas fa-chevron-down"/>
                 }

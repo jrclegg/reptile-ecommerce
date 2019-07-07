@@ -20,7 +20,7 @@ class FrozenFood extends React.Component {
     return (
       <div>
       <Parent>
-        <Link to="/Mice/Pinkies"><Image src={mouse} alt="mouse"/></Link>
+        <Link to="/Mice/Pinkies" name="scroll-to-element"><Image src={mouse} alt="mouse"/></Link>
         <Link to="/Mice/LargePinkies"><Image src={mouse} alt="mouse"/></Link>
         <FrozenLink to="/Mice/Pinkies">Pinkies</FrozenLink>
         <FrozenLink to="/Mice/LargePinkies">Large Pinkies</FrozenLink>
@@ -114,6 +114,18 @@ class FrozenFood extends React.Component {
         <Link to="/Rabbits/MiniRabbits"><Image src={mouse} alt="mouse"/></Link>
         <FrozenLink to="/Rabbits/GiantRabbits">Giant Rabbits</FrozenLink>
         <FrozenLink to="/Rabbits/MiniRabbits">Small Quail</FrozenLink>
+      </Parent>
+      <Parent>
+        <Link to="/GuineaPigs/ExtraLargeGuineaPigs"><Image src={mouse} alt="mouse"/></Link>
+        <Image src={mouse} alt="mouse"/>
+        <FrozenLink to="/GuineaPigs/ExtraLargeGuineaPigs">Extra Large Guinea Pigs</FrozenLink>
+        <FrozenLink>Small Hamsters</FrozenLink>
+      </Parent>
+      <Parent>
+        <Link to="/GuineaPigs/ExtraLargeGuineaPigs"><Image src={mouse} alt="mouse"/></Link>
+        <Image src={mouse} alt="mouse"/>
+        <FrozenLink to="/GuineaPigs/ExtraLargeGuineaPigs">Extra Large Guinea Pigs</FrozenLink>
+        <FrozenLink>Small Hamsters</FrozenLink>
       </Parent>
       {/* <Parent>
         <Image src={mouse} alt="mouse"/>
