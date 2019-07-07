@@ -20,13 +20,13 @@ class Locusts extends React.Component {
     return (
       <div>
       <Parent>
-        <Link name="scroll-to-element" to="/Locusts/Hatchlings"><Image src={mouse} alt="mouse"/></Link>
+        <Link to="/Locusts/Hatchlings"><Image src={mouse} alt="mouse"/></Link>
         <Link to="/Locusts/Small"><Image src={mouse} alt="mouse"/></Link>
         <FrozenLink to="/Locusts/Hatchlings">Hatchling Locusts</FrozenLink>
         <FrozenLink to="/Locusts/Small">Small Locusts</FrozenLink>
       </Parent>
       <Parent>
-        <Link to="/Locusts/Medium"><Image src={mouse} alt="mouse"/></Link>
+        <Link name="scroll-to-element" to="/Locusts/Medium"><Image src={mouse} alt="mouse"/></Link>
         <Link to="/Locusts/Large"><Image src={mouse} alt="mouse"/></Link>
         <FrozenLink to="/Locusts/Medium">Medium Locusts</FrozenLink>
         <FrozenLink to="/Locusts/Large">Large Locusts</FrozenLink>

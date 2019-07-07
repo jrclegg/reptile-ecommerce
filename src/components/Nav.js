@@ -2,9 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import placeholder from "../assets/placeholder.png";
 import { NavLink } from "react-router-dom";
-import {scroller} from 'react-scroll';
-
-
+// import {scroller} from 'react-scroll';
 
 const Header = styled.div`
   background: ${props => props.theme.colors.default};
@@ -79,14 +77,14 @@ class Nav extends React.Component {
     }
   }
   
-  handleScroll() {
-    scroller.scrollTo('scroll-to-element', {
-      duration: 400,
-      delay: 0,
-      smooth: 'easeInOutQuart',
-      offset: -10
-    })
-  }
+  // handleScroll(event) {
+  //   scroller.scrollTo('scroll-to-element', {
+  //     duration: 200,
+  //     delay: 0,
+  //     smooth: 'easeInOutQuart',
+  //     offset: -650
+  //   })
+  // }
   
   showMenu() {
     this.setState({ showMenu: !this.state.showMenu });
@@ -100,14 +98,16 @@ class Nav extends React.Component {
     }
   }
 
-
+  hideDropdown(){
+    this.setState({showFrozenItems: false, showLiveItems: false})
+  }
 
   render() {
     let { showMenu, showFrozenItems, showLiveItems} = this.state
     const NavDropdown = props => {
       return <NavItemDropdown 
                 to={props.url} 
-                onClick={(event)=>this.handleScroll(event)}
+                onClick={(event)=>this.hideDropdown(event)}
               >{props.productTitle}</NavItemDropdown>;
     }
     return (
