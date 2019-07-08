@@ -15,6 +15,7 @@ import GuineaPigs from './pages/GuineaPigs/GuineaPig';
 import Rabbits from './pages/Rabbits/Rabbit';
 import Locusts from './pages/Livefood/Locusts';
 import BlackCrickets from './pages/Livefood/BlackCrickets';
+import BrownCrickets from './pages/Livefood/BrownCrickets';
 
 import GetProducts from './components/Product';
 import {Image, 
@@ -38,6 +39,7 @@ class App extends Component {
             <Route exact path="/rabbits" component={Rabbits}/>
             <Route exact path="/locusts" component={Locusts}/>
             <Route exact path="/blackcrickets" component={BlackCrickets}/>
+            <Route exact path="/browncrickets" component={BrownCrickets}/>
             {/************* Mice **************/}
             <Route 
               exact path="/mice/pinkies" 
@@ -1668,6 +1670,216 @@ class App extends Component {
                   products.map((item) =>
                     <div key={item.id}>
                       {item.product_name === "Extra Large Black Crickets" ?
+                      <React.Fragment>
+                        <MainTitle>{item.product_name}</MainTitle>
+                        <Parent>
+                          <Image src={mouse}></Image>
+                        </Parent>
+                        {item.packs.map(pack =>
+                          <div key={pack.quantity}>
+                              <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
+                              {pack.retailers
+                                  .sort((a,b) => a.price - b.price)
+                                  .map(retailer =>
+                                      <div key={retailer.company_id}>
+                                          <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)}<QuantityInput/><BasketButton>Add To Basket</BasketButton></QuantityDescription>
+                                      </div>
+                                  )
+                              }
+                          </div>
+                        )}
+                        </React.Fragment>
+                        : ''
+                      }
+                    </div>
+                  )
+                )} 
+              />}
+             />
+            <Route 
+              exact path="/browncrickets/micro" 
+              render={(props) => 
+              <GetProducts 
+              {...props}  
+                render={({ products }) => (
+                  products.map((item) =>
+                    <div key={item.id}>
+                      {item.product_name === "Micro Silent Brown Crickets" ?
+                      <React.Fragment>
+                        <MainTitle>{item.product_name}</MainTitle>
+                        <Parent>
+                          <Image src={mouse}></Image>
+                        </Parent>
+                        {item.packs.map(pack =>
+                          <div key={pack.quantity}>
+                              <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
+                              {pack.retailers
+                                  .sort((a,b) => a.price - b.price)
+                                  .map(retailer =>
+                                      <div key={retailer.company_id}>
+                                          <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)}<QuantityInput/><BasketButton>Add To Basket</BasketButton></QuantityDescription>
+                                      </div>
+                                  )
+                              }
+                          </div>
+                        )}
+                        </React.Fragment>
+                        : ''
+                      }
+                    </div>
+                  )
+                )} 
+              />}
+             />
+             <Route 
+              exact path="/browncrickets/small" 
+              render={(props) => 
+              <GetProducts 
+              {...props}  
+                render={({ products }) => (
+                  products.map((item) =>
+                    <div key={item.id}>
+                      {item.product_name === "Small Silent Brown Crickets" ?
+                      <React.Fragment>
+                        <MainTitle>{item.product_name}</MainTitle>
+                        <Parent>
+                          <Image src={mouse}></Image>
+                        </Parent>
+                        {item.packs.map(pack =>
+                          <div key={pack.quantity}>
+                              <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
+                              {pack.retailers
+                                  .sort((a,b) => a.price - b.price)
+                                  .map(retailer =>
+                                      <div key={retailer.company_id}>
+                                          <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)}<QuantityInput/><BasketButton>Add To Basket</BasketButton></QuantityDescription>
+                                      </div>
+                                  )
+                              }
+                          </div>
+                        )}
+                        </React.Fragment>
+                        : ''
+                      }
+                    </div>
+                  )
+                )} 
+              />}
+             />
+            <Route 
+              exact path="/browncrickets/mediumsmall" 
+              render={(props) => 
+              <GetProducts 
+              {...props}  
+                render={({ products }) => (
+                  products.map((item) =>
+                    <div key={item.id}>
+                      {item.product_name === "Medium Small Silent Brown Crickets" ?
+                      <React.Fragment>
+                        <MainTitle>{item.product_name}</MainTitle>
+                        <Parent>
+                          <Image src={mouse}></Image>
+                        </Parent>
+                        {item.packs.map(pack =>
+                          <div key={pack.quantity}>
+                              <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
+                              {pack.retailers
+                                  .sort((a,b) => a.price - b.price)
+                                  .map(retailer =>
+                                      <div key={retailer.company_id}>
+                                          <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)}<QuantityInput/><BasketButton>Add To Basket</BasketButton></QuantityDescription>
+                                      </div>
+                                  )
+                              }
+                          </div>
+                        )}
+                        </React.Fragment>
+                        : ''
+                      }
+                    </div>
+                  )
+                )} 
+              />}
+             />
+             <Route 
+              exact path="/browncrickets/medium" 
+              render={(props) => 
+              <GetProducts 
+              {...props}  
+                render={({ products }) => (
+                  products.map((item) =>
+                    <div key={item.id}>
+                      {item.product_name === "Medium Silent Brown Crickets" ?
+                      <React.Fragment>
+                        <MainTitle>{item.product_name}</MainTitle>
+                        <Parent>
+                          <Image src={mouse}></Image>
+                        </Parent>
+                        {item.packs.map(pack =>
+                          <div key={pack.quantity}>
+                              <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
+                              {pack.retailers
+                                  .sort((a,b) => a.price - b.price)
+                                  .map(retailer =>
+                                      <div key={retailer.company_id}>
+                                          <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)}<QuantityInput/><BasketButton>Add To Basket</BasketButton></QuantityDescription>
+                                      </div>
+                                  )
+                              }
+                          </div>
+                        )}
+                        </React.Fragment>
+                        : ''
+                      }
+                    </div>
+                  )
+                )} 
+              />}
+             />
+             <Route 
+              exact path="/browncrickets/large" 
+              render={(props) => 
+              <GetProducts 
+              {...props}  
+                render={({ products }) => (
+                  products.map((item) =>
+                    <div key={item.id}>
+                      {item.product_name === "Large Silent Brown Crickets" ?
+                      <React.Fragment>
+                        <MainTitle>{item.product_name}</MainTitle>
+                        <Parent>
+                          <Image src={mouse}></Image>
+                        </Parent>
+                        {item.packs.map(pack =>
+                          <div key={pack.quantity}>
+                              <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
+                              {pack.retailers
+                                  .sort((a,b) => a.price - b.price)
+                                  .map(retailer =>
+                                      <div key={retailer.company_id}>
+                                          <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)}<QuantityInput/><BasketButton>Add To Basket</BasketButton></QuantityDescription>
+                                      </div>
+                                  )
+                              }
+                          </div>
+                        )}
+                        </React.Fragment>
+                        : ''
+                      }
+                    </div>
+                  )
+                )} 
+              />}
+             />
+             <Route 
+              exact path="/browncrickets/extralarge" 
+              render={(props) => 
+              <GetProducts 
+              {...props}  
+                render={({ products }) => (
+                  products.map((item) =>
+                    <div key={item.id}>
+                      {item.product_name === "Extra Large Silent Brown Crickets" ?
                       <React.Fragment>
                         <MainTitle>{item.product_name}</MainTitle>
                         <Parent>
