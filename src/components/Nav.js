@@ -45,6 +45,11 @@ const NavIcon = styled.i`
     font-size: 35px;
   }
 `
+const BasketIcon = styled.i`
+  font-size: 28px;
+  margin-left: 15%;
+
+`
 const NavItemDropdown = styled(NavItem)`
   @media (max-width: 768px) {
    font-weight: normal;
@@ -115,6 +120,11 @@ class Nav extends React.Component {
         <Logo alt="logo" src={placeholder} />
         <NavLink to="/">
           <MainTitle>CompareTheReptile.com</MainTitle>
+        </NavLink>
+        <NavLink to="/basket">
+          <BasketIcon className="fas fa-shopping-cart">
+            
+          </BasketIcon>
         </NavLink>
         <NavToggle id="navToggle" tabIndex="0" onClick={(event) => this.showMenu(event)}>
           { showMenu !== true ?
