@@ -26,8 +26,8 @@ class Mice extends React.Component {
         <FrozenLink to="/Mice/LargePinkies">Large Pinkies</FrozenLink>
       </Parent>
       <Parent>
-        <Link to="/Mice/"><Image src={mouse} alt="mouse"/></Link>
-        <Link to="/Mice/Hoppers.js"><Image src={mouse} alt="mouse"/></Link>
+        <Link to="/Mice/Fuzzies"><Image src={mouse} alt="mouse"/></Link>
+        <Link to="/Mice/Hoppers"><Image src={mouse} alt="mouse"/></Link>
         <FrozenLink to="/Mice/Fuzzies">Fuzzies</FrozenLink>
         <FrozenLink to="/Mice/Hoppers">Hoppers</FrozenLink>
       </Parent>

@@ -38,6 +38,17 @@ class App extends Component {
             {/************* Mice **************/}
             <Route exact path="/mice/pinkies" render={() => { return (<GetProducts name="Pinkie Mice"/>); }}/>
             <Route exact path="/mice/largepinkies" render={() => { return (<GetProducts name="Large Pinkie Mice"/>); }}/>
+            <Route exact path="/mice/fuzzies" render={() => { return (<GetProducts name="Mouse Fuzzies"/>); }}/>
+            <Route exact path="/mice/hoppers" render={() => { return (<GetProducts name="Hoppers"/>); }}/>
+            <Route exact path="/mice/smallmice" render={() => { return (<GetProducts name="Small Mice"/>); }}/>
+            <Route exact path="/mice/mediummice" render={() => { return (<GetProducts name="Medium Mice"/>); }}/>
+            <Route exact path="/mice/largemice" render={() => { return (<GetProducts name="Large Mice"/>); }}/>
+            <Route exact path="/mice/extralargemice" render={() => { return (<GetProducts name="Extra Large Mice"/>); }}/>
+
+            <Route exact path="/rats/ratpups" render={() => { return (<GetProducts name="Rat Pups"/>); }}/>
+            <Route exact path="/rats/ratfuzzies" render={() => { return (<GetProducts name="Rat Fuzzies"/>); }}/>
+            <Route exact path="/rats/smallweaners" render={() => { return (<GetProducts name="Small Weaner Rats"/>); }}/>
+
       </HashRouter>
     );
   }
