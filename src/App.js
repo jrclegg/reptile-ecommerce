@@ -48,7 +48,57 @@ class App extends Component {
             <Route exact path="/rats/ratpups" render={() => { return (<GetProducts name="Rat Pups"/>); }}/>
             <Route exact path="/rats/ratfuzzies" render={() => { return (<GetProducts name="Rat Fuzzies"/>); }}/>
             <Route exact path="/rats/smallweaners" render={() => { return (<GetProducts name="Small Weaner Rats"/>); }}/>
-
+            <Route  exact path="/rats/largeweaners"render={() => { return (<GetProducts name="Large Weaner Rats"/>); }}/>
+            <Route exact path="/rats/smallrats" render={() => { return (<GetProducts name="Small Rats"/>); }}/>
+            <Route exact path="/rats/mediumrats" render={() => { return (<GetProducts name="Medium Rats"/>); }}/>
+            <Route exact path="/rats/largerats" render={() => { return (<GetProducts name="Large Rats"/>); }}/>
+            <Route exact path="/rats/extralargerats" render={() => { return (<GetProducts name="Extra Large Rats"/>); }}/>
+            <Route exact path="/rats/giantrats" render={() => { return (<GetProducts name="Giant Rats"/>); }}/>
+            {/************* Multimammate Mice  **********/}
+            <Route exact path="/multis/small" render={() => { return (<GetProducts name="Small Multimammate Mice"/>); }}/>
+            <Route exact path="/multis/large" render={() => { return (<GetProducts name="Medium/Large Multimammate Mice"/>); }}/>
+            <Route exact path="/multis/extralarge" render={() => { return (<GetProducts name="Extra Large Multimammate Mice"/>); }}/>
+             {/************* Guinea Pigs  **********/}
+            <Route exact path="/guineapigs/miniguineapigs" render={() => { return (<GetProducts name="Mini Guinea Pigs"/>); }}/>
+            <Route exact path="/guineapigs/smallguineapigs"  render={() => { return (<GetProducts name="Small Guinea Pigs"/>); }}/>
+            <Route exact path="/guineapigs/mediumguineapigs" render={() => { return (<GetProducts name="Regular Guinea Pigs"/>); }}/>
+            <Route exact path="/guineapigs/largeguineapigs" render={() => { return (<GetProducts name="Large Guinea Pigs"/>); }}/>
+             {/************* Rabbits  **********/}
+            <Route exact path="/rabbits/dayoldrabbits" render={() => { return (<GetProducts name="Day Old Rabbits"/>); }}/>
+            <Route exact path="/rabbits/minirabbits" render={() => { return (<GetProducts name="Mini Rabbits"/>); }}/>
+            <Route exact path="/rabbits/smallrabbits" render={() => { return (<GetProducts name="Small Rabbits"/>); }}/>
+            <Route exact path="/rabbits/mediumrabbits" render={() => { return (<GetProducts name="Medium Rabbits"/>); }}/>
+            <Route exact path="/rabbits/largerabbits" render={() => { return (<GetProducts name="Large Rabbits"/>); }}/>
+            <Route exact path="/rabbits/extralargerabbits" render={() => { return (<GetProducts name="Extra Large Rabbits"/>); }} />
+            <Route exact path="/rabbits/giantrabbits" render={() => { return (<GetProducts name="Giant Rabbits"/>); }}/>
+            {/************* Hamsters **********/}
+            <Route exact path="/hamsters" render={() => { return (<GetProducts name="Medium/Large Hamsters"/>); }}/>
+            {/************* Gerbils **********/}
+            <Route exact path="/gerbils" render={() => { return (<GetProducts name="Medium Gerbils"/>); }}/>
+             {/************* Chicks **********/}
+            <Route exact path="/chicks" render={() => { return (<GetProducts name="Chicks"/>); }}/>
+             {/************* Quail **********/}
+            <Route exact path="/quail" render={() => { return (<GetProducts name="Large Quail"/>); }}/>
+            {/************* Locusts **********/}
+            <Route exact path="/locusts/hatchlings" render={() => { return (<GetProducts name="Hatchling Locusts"/>); }}/>
+            <Route exact path="/locusts/small" render={() => { return (<GetProducts name="Small Locusts"/>); }}/>
+            <Route exact path="/locusts/medium" render={() => { return (<GetProducts name="Medium Small Locusts"/>); }}/>
+            <Route exact path="/locusts/large" render={() => { return (<GetProducts name="Large Locusts"/>); }}/>
+            <Route exact path="/locusts/extralarge" render={() => { return (<GetProducts name="Extra Large Locusts"/>); }}/>
+            <Route exact path="/locusts/adult" render={() => { return (<GetProducts name="Adult Locusts"/>); }}/>
+            {/************* Black Crickets **********/}
+            <Route exact path="/blackcrickets/micro" render={() => { return (<GetProducts name="Micro Silent Brown Crickets"/>); }}/>
+            <Route exact path="/blackcrickets/small" render={() => { return (<GetProducts name="Small Silent Brown Crickets"/>); }}/>
+            <Route exact path="/blackcrickets/mediumsmall" render={() => { return (<GetProducts name="Medium Silent Brown Crickets"/>); }}/>
+            <Route exact path="/blackcrickets/medium" render={() => { return (<GetProducts name="Standard Silent Brown Crickets"/>); }}/>
+            <Route exact path="/blackcrickets/large" render={() => { return (<GetProducts name="Large Silent Brown Crickets"/>); }} />
+            <Route exact path="/blackcrickets/extralarge" render={() => { return (<GetProducts name="Extra Large Silent Brown Crickets"/>); }}/>
+            <Route exact path="/browncrickets/micro" render={() => { return (<GetProducts name="Micro Black Crickets"/>); }}/>
+            <Route exact path="/browncrickets/small" render={() => { return (<GetProducts name="Small Black Crickets"/>); }}/>
+            <Route exact path="/browncrickets/mediumsmall" render={() => { return (<GetProducts name="Medium Small Black Crickets"/>); }}/>
+            <Route exact path="/browncrickets/medium" render={() => { return (<GetProducts name="Medium Black Crickets"/>); }}/>
+            <Route exact path="/browncrickets/large" render={() => { return (<GetProducts name="Large Black Crickets"/>); }}/>
+            <Route exact path="/browncrickets/extralarge" render={() => { return (<GetProducts name="Extra Large Black Crickets"/>); }} />
       </HashRouter>
     );
   }
