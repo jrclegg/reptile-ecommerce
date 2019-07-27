@@ -5,11 +5,15 @@ import { ThemeProvider } from 'styled-components'
 import theme from './theme/index'
 import './index.css'
 import * as serviceWorker from './serviceWorker'
+import store from "./store/index";
+import { Provider } from "react-redux";
 
 ReactDOM.render(
+    <Provider store={store}>
     <ThemeProvider theme={theme}>
             <App />
-    </ThemeProvider>, 
+    </ThemeProvider>
+    </Provider>, 
 document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

@@ -5,11 +5,15 @@ import {Image,
   QuantityInput, BasketButton, 
   Parent, MainTitle} from '../components/index'
   import mouse from '../assets/mouse.jpg'
+  import { connect } from 'react-redux'
 
   class GetProducts extends React.Component {
-    state = {
-      products: [],
-      name: ''
+    constructor(props) {
+      super(props)
+      this.state = {
+        products: [],
+        name: ''
+      }
     }
     componentDidMount() {
         data().then(data=>{ 
@@ -17,6 +21,9 @@ import {Image,
             products: data.products
           })
         });
+    }
+    handleClick = (id)=>{
+      this.props.addToCart(id); 
     }
     render() {
       return(
@@ -35,7 +42,10 @@ import {Image,
                       .sort((a,b) => a.price - b.price)
                       .map(retailer =>
                           <div key={retailer.company_id}>
-                              <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)}<QuantityInput/><BasketButton>Add To Basket</BasketButton></QuantityDescription>
+                              <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)}
+                               <QuantityInput/>
+                                <BasketButton onClick={() => {this.handleClick(retailer)}}>Add To Basket</BasketButton>
+                              </QuantityDescription>
                           </div>
                       )
                   }
@@ -51,4 +61,22 @@ import {Image,
     }
   }
 
-export default GetProducts
+
+function mapStateToProps(state) {
+  return {
+    cart: state.cart
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    addToCart: (item) => {
+      dispatch({ type: 'ADD', payload: item })
+    },
+    removeFromCart: (item) => {
+      dispatch({ type: 'REMOVE', payload: item })
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GetProducts)

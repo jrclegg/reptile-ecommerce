@@ -16,6 +16,7 @@ import Rabbits from './pages/Rabbits/Rabbit';
 import Locusts from './pages/Livefood/Locusts';
 import BlackCrickets from './pages/Livefood/BlackCrickets';
 import BrownCrickets from './pages/Livefood/BrownCrickets';
+import Basket from './pages/Cart'
 
 import GetProducts from './components/Product';
 
@@ -35,6 +36,7 @@ class App extends Component {
             <Route exact path="/locusts" component={Locusts}/>
             <Route exact path="/blackcrickets" component={BlackCrickets}/>
             <Route exact path="/browncrickets" component={BrownCrickets}/>
+            <Route exact path="/basket" component={Basket}/>
             {/************* Mice **************/}
             <Route exact path="/mice/pinkies" render={() => { return (<GetProducts name="Pinkie Mice"/>); }}/>
             <Route exact path="/mice/largepinkies" render={() => { return (<GetProducts name="Large Pinkie Mice"/>); }}/>
@@ -93,6 +95,7 @@ class App extends Component {
             <Route exact path="/blackcrickets/medium" render={() => { return (<GetProducts name="Standard Silent Brown Crickets"/>); }}/>
             <Route exact path="/blackcrickets/large" render={() => { return (<GetProducts name="Large Silent Brown Crickets"/>); }} />
             <Route exact path="/blackcrickets/extralarge" render={() => { return (<GetProducts name="Extra Large Silent Brown Crickets"/>); }}/>
+            {/************* Brown Crickets **********/}
             <Route exact path="/browncrickets/micro" render={() => { return (<GetProducts name="Micro Black Crickets"/>); }}/>
             <Route exact path="/browncrickets/small" render={() => { return (<GetProducts name="Small Black Crickets"/>); }}/>
             <Route exact path="/browncrickets/mediumsmall" render={() => { return (<GetProducts name="Medium Small Black Crickets"/>); }}/>

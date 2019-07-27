@@ -36,8 +36,10 @@ app.get('/projects', function(request, response){
               "quantity": "Quantity",
               "$group[retailers](CompanyID)":{
                 "price": "Price",
-                "company_id": "CompanyID",
                 "company_name": "CompanyName",
+                "product_name": "ProductName",
+                "quantity": "Quantity",
+                "product_weight": "ProductWeight",
               }
             }
           }
