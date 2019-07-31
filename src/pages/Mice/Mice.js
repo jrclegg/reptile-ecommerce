@@ -1,5 +1,4 @@
 import React from 'react'
-import {data} from '../../components/GetData';
 import styled from 'styled-components'
 import Image from '../../components/Image.js'
 import mouse from '../../assets/mouseother.jpg'

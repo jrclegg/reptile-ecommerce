@@ -71,6 +71,8 @@ const NavToggle = styled.div`
 const NavItemArrow = styled.i`
   float: right;
   margin-right: 30px;
+  margin-top: -30px;
+  color: white;
 `
 class Nav extends React.Component {
   constructor(props) {
@@ -82,14 +84,6 @@ class Nav extends React.Component {
     }
   }
   
-  // handleScroll(event) {
-  //   scroller.scrollTo('scroll-to-element', {
-  //     duration: 200,
-  //     delay: 0,
-  //     smooth: 'easeInOutQuart',
-  //     offset: -650
-  //   })
-  // }
   
   showMenu() {
     this.setState({ showMenu: !this.state.showMenu });
@@ -137,7 +131,8 @@ class Nav extends React.Component {
             <NavList>
               <NavItem id="frozenFood" tabIndex="1" to="/frozenfood" onClick={(event) => this.toggleDropdown(event)}>
                 Frozen Food
-                  {
+              </NavItem>
+              {
                     showFrozenItems === true ?
                     <React.Fragment>
                       <NavItemArrow className="fas fa-chevron-up"/>
@@ -153,20 +148,19 @@ class Nav extends React.Component {
                     </React.Fragment>
                     : <NavItemArrow className="fas fa-chevron-down"/>
                   }
-              </NavItem>
               <NavItem id="livefood" tabIndex="2" to="/livefood" onClick={(event) => this.toggleDropdown(event)}>
                 Livefood
-                {
-                    showLiveItems === true ? 
-                    <React.Fragment>
-                      <NavItemArrow className="fas fa-chevron-up"/>
-                      <NavDropdown url="/locusts" productTitle="Locusts"/>
-                      <NavDropdown url="/browncrickets" productTitle="Brown Crickets"/>
-                      <NavDropdown url="/blackcrickets" productTitle="Black Crickets"/>
-                    </React.Fragment>
-                    : <NavItemArrow className="fas fa-chevron-down"/>
-                }
               </NavItem>
+              {
+                showLiveItems === true ? 
+                <React.Fragment>
+                  <NavItemArrow className="fas fa-chevron-up"/>
+                  <NavDropdown url="/locusts" productTitle="Locusts"/>
+                  <NavDropdown url="/browncrickets" productTitle="Brown Crickets"/>
+                  <NavDropdown url="/blackcrickets" productTitle="Black Crickets"/>
+                </React.Fragment>
+                : <NavItemArrow className="fas fa-chevron-down"/>
+              }
             </NavList>
           }
         </nav>

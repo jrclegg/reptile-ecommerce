@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import '../components/BasketButton'
-import BasketButton from '../components/BasketButton';
 import styled from 'styled-components'
-import Image from '../components/Image'
-import mouse from '../assets/mouseother.jpg'
 
 const ItemWrapper = styled.div`
   margin: 10px;
