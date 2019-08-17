@@ -8,6 +8,8 @@ import QuantityDescription from './QuantityDescription'
 import QuantityInput from './QuantityInput'
 import QuantityTitle from './QuantityTitle'
 import getProducts from './Product'
+import PlusButton from './PlusButton'
+import MinusButton from './MinusButton'
 
 export {
     getProducts,
@@ -19,5 +21,7 @@ export {
     Product,
     QuantityDescription,
     QuantityInput,
-    QuantityTitle
+    QuantityTitle,
+    PlusButton,
+    MinusButton
 }

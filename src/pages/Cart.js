@@ -36,7 +36,6 @@ class Cart extends Component{
       this.props.removeFromCart(id);
     }
     render(){
-        console.log(this.props.cart)
         return(
             this.props.cart.map((cartItem) =>
                 <ItemWrapper key={cartItem.price}>
@@ -49,8 +48,12 @@ class Cart extends Component{
                     <p>{cartItem.price}</p>
                   </PriceWrapper>
                   <QuantityWrapper>
-                    <p>Quantity</p>
+                    <p>Pack</p>
                     <p>{cartItem.quantity}</p>
+                  </QuantityWrapper>
+                  <QuantityWrapper>
+                    <p>Quantity</p>
+                    <p>{cartItem.total}</p>
                   </QuantityWrapper>
                   <TotalWrapper>
                     <p>Total</p>

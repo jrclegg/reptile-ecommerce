@@ -40,6 +40,7 @@ app.get('/projects', function(request, response){
                 "company_name": "CompanyName",
                 "product_name": "ProductName",
                 "quantity": "Quantity",
+                "total": "Total",
                 "product_weight": "ProductWeight",
               }
             }
