@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import { ThemeProvider } from 'styled-components'
 import theme from './theme/index'
+import thunk from "redux-thunk";
 import './index.css'
 import * as serviceWorker from './serviceWorker'
-import store from "./store/index";
 import { Provider } from "react-redux";
+import {createStore, applyMiddleware} from 'redux';
+import mainReducer from "./store/reducers/index";
+
+let store = createStore(mainReducer, applyMiddleware(thunk))
+
 
 ReactDOM.render(
     <Provider store={store}>

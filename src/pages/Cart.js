@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import '../components/BasketButton'
 import styled from 'styled-components'
+import * as actionCreators from "../store/actions/index"
+
 
 const ItemWrapper = styled.div`
   margin: 10px;
@@ -36,50 +38,39 @@ class Cart extends Component{
       this.props.removeFromCart(id);
     }
     render(){
+      const {cart, multiplier} = this.props
+      console.log(cart);
         return(
-            this.props.cart.map((cartItem) =>
-                <ItemWrapper key={cartItem.price}>
+            Object.keys(cart).map(() =>
+                <ItemWrapper key={cart.price}>
                   <ProductWrapper>
                     <p>Product</p>
-                    <p>{cartItem.product_name} {cartItem.product_weight}</p>
+                    <p>{cart.product_name} {cart.product_weight}</p>
                   </ProductWrapper>
                   <PriceWrapper>
                     <p>Price</p>
-                    <p>{cartItem.price}</p>
+                    <p>{cart.price}</p>
                   </PriceWrapper>
                   <QuantityWrapper>
                     <p>Pack</p>
-                    <p>{cartItem.quantity}</p>
+                    <p>{cart.quantity}</p>
                   </QuantityWrapper>
                   <QuantityWrapper>
                     <p>Quantity</p>
-                    <p>{cartItem.total}</p>
+                    <p>{multiplier}</p>
                   </QuantityWrapper>
                   <TotalWrapper>
                     <p>Total</p>
-                    <p>{cartItem.price}</p>
+                    <p>{multiplier}</p>
                   </TotalWrapper>
-                  <button onClick={() => {this.handleRemove(cartItem)}}>Remove</button>
+                  <button onClick={() => {this.handleRemove(cart)}}>Remove</button>
                 </ItemWrapper>
             )
         )
     }
 }
-function mapStateToProps(state) {
-    return {
-      cart: state.cart
-    }
-  }
-  
-  function mapDispatchToProps(dispatch) {
-    return {
-      addToCart: (item) => {
-        dispatch({ type: 'ADD', payload: item })
-      },
-      removeFromCart: (item) => {
-        dispatch({ type: 'REMOVE', payload: item })
-      }
-    }
-  }
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(Cart)
+const mapStateToProps=(state)=>{
+  return state
+};
+
+export default connect(mapStateToProps, actionCreators)(Cart);
