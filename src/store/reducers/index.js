@@ -24,7 +24,8 @@ const mainReducer=(state = defaultState, action)=>{
         case 'ADD_TO_CART':
         const  newCart = [...state.cart, action.item]
         var itemExists = state.cart.find(item => item.product_id === action.id);
-        if (itemExists) {
+        var packExists = state.cart.find(item => item.quantity === action.item.quantity);
+        if (itemExists && packExists) {
             return state
         } else {
             return {

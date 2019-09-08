@@ -39,6 +39,7 @@ class Cart extends Component{
     }
     render(){
       const {cart, multiplier} = this.props
+      console.log(cart)
       return(
           cart.map((cartItem) =>
               <ItemWrapper key={cartItem.price}>
