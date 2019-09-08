@@ -22,18 +22,18 @@ const mainReducer=(state = defaultState, action)=>{
             multiplier: action.multiplier-1
         }
         case 'ADD_TO_CART':
-            var itemExists = state.products.find(item => item.product_id === action.id);
-            if (itemExists) {
-                return {
-                    ...state, 
-                    cart: action.item
-                }
-            } else {
-                return {
-                    ...state, 
-                    cart: action.item
-                }
+        const  newCart = [...state.cart, action.item]
+        var itemExists = state.cart.find(item => item.product_id === action.id);
+        if (itemExists) {
+            return state
+        } else {
+            return {
+                ...state, cart: newCart
             }
+        }
+        case 'REMOVE_FROM_CART':
+        const firstMatchIndex = state.cart.indexOf(action.item)
+        return state.cart.filter((item, index) => index !== firstMatchIndex)
         default: 
         return state;
     }  

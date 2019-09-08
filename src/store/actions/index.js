@@ -32,6 +32,15 @@ export function decrementQuantity(multiplier){
 export function addToCart(item) {
     return{
         type: "ADD_TO_CART",
+        id: item.product_id,
         item: item
+    }
+}
+
+export function removeFromCart(item){
+    return {
+        type: "REMOVE_FROM_CART",
+        item: item
+
     }
 }

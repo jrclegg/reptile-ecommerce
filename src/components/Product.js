@@ -34,7 +34,6 @@ import {Image,
 
     render() {
       const {products, multiplier} = this.props
-      console.log(products)
       return(
          products.map((item) =>
             <div key={item.id} >

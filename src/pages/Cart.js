@@ -9,7 +9,7 @@ const ItemWrapper = styled.div`
   margin: 10px;
   width: 90%;
   border: 1px solid black;
-  padding: 10px;
+  padding: 10px;j
 `
 
 const ProductWrapper = styled.div`
@@ -39,34 +39,34 @@ class Cart extends Component{
     }
     render(){
       const {cart, multiplier} = this.props
-      console.log(cart.product_name)
-        return(
-                <ItemWrapper>
-                  <ProductWrapper>
-                    <p>Product</p>
-                    <p>{cart.product_name} {cart.product_weight}</p>
-                  </ProductWrapper>
-                  <PriceWrapper>
-                    <p>Price</p>
-                    <p>{cart.price}</p>
-                  </PriceWrapper>
-                  <QuantityWrapper>
-                    <p>Pack</p>
-                    <p>{cart.quantity}</p>
-                  </QuantityWrapper>
-                  <QuantityWrapper>
-                    <p>Quantity</p>
-                    <p>{multiplier}</p>
-                  </QuantityWrapper>
-                  <TotalWrapper>
-                    <p>Total</p>
-                    <p>{multiplier}</p>
-                  </TotalWrapper>
-                  <button onClick={() => {this.handleRemove(cart)}}>Remove</button>
-                </ItemWrapper>
-            
-        )
-    }
+      return(
+          cart.map((cartItem) =>
+              <ItemWrapper key={cartItem.price}>
+                <ProductWrapper>
+                  <p>Product</p>
+                  <p>{cartItem.product_name} {cartItem.product_weight}</p>
+                </ProductWrapper>
+                <PriceWrapper>
+                  <p>Price</p>
+                  <p>{cartItem.price}</p>
+                </PriceWrapper>
+                <QuantityWrapper>
+                  <p>Pack</p>
+                  <p>{cartItem.quantity}</p>
+                </QuantityWrapper>
+                <QuantityWrapper>
+                  <p>Quantity</p>
+                  <p>{multiplier}</p>
+                </QuantityWrapper>
+                <TotalWrapper>
+                  <p>Total</p>
+                  <p>{cartItem.price}</p>
+                </TotalWrapper>
+                <button onClick={() => {this.handleRemove(cartItem)}}>Remove</button>
+              </ItemWrapper>
+          )
+      )
+  }
 }
 const mapStateToProps=(state)=>{
   return state
