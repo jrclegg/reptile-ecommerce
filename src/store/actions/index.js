@@ -40,7 +40,7 @@ export function addToCart(item) {
 export function removeFromCart(item){
     return {
         type: "REMOVE_FROM_CART",
+        id: item.product_id,
         item: item
-
     }
 }

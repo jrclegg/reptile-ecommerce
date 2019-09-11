@@ -54,8 +54,7 @@ import {Image,
                                   <MinusButton onClick={() => {this.decrement(multiplier)}}>-</MinusButton><QuantityInput id={pack.id} value={multiplier}/><PlusButton onClick={() => {this.increment(multiplier)}}>+</PlusButton>
                                     <BasketButton onClick={() => {this.handleClick(retailer)}}>Add To Basket</BasketButton>
                               </div>
-                          )
-                      }
+                      )}
                   </div>
                 )}
                 </React.Fragment>
