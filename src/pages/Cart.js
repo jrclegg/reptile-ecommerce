@@ -49,7 +49,7 @@ class Cart extends Component{
                 </ProductWrapper>
                 <PriceWrapper>
                   <p>Price</p>
-                  <p>{cartItem.price}</p>
+                  <p>£{cartItem.price}</p>
                 </PriceWrapper>
                 <QuantityWrapper>
                   <p>Pack</p>
@@ -61,7 +61,7 @@ class Cart extends Component{
                 </QuantityWrapper>
                 <TotalWrapper>
                   <p>Total</p>
-                  <p>{cartItem.price}</p>
+                  <p>£{multiplier * cartItem.price}</p>
                 </TotalWrapper>
                 <button onClick={() => {this.handleRemove(cartItem)}}>Remove</button>
               </ItemWrapper>

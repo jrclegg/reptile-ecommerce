@@ -51,7 +51,7 @@ import {Image,
                           .map(retailer =>
                               <div key={retailer.company_id}>
                                   <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)} </QuantityDescription>
-                                  <MinusButton onClick={() => {this.decrement(multiplier)}}>-</MinusButton><QuantityInput id={pack.id} value={multiplier}/><PlusButton onClick={() => {this.increment(multiplier)}}>+</PlusButton>
+                                  <MinusButton onClick={() => {this.decrement(multiplier)}}>-</MinusButton><QuantityInput value={multiplier}/><PlusButton id={pack.quantity} onClick={() => {this.increment(multiplier)}}>+</PlusButton>
                                     <BasketButton onClick={() => {this.handleClick(retailer)}}>Add To Basket</BasketButton>
                               </div>
                       )}
