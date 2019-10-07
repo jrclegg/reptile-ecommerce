@@ -21,19 +21,19 @@ import {Image,
       this.props.addToCart(id);
     }
 
-    increment(multiplier){
-      this.props.incrementQuantity(multiplier)
+    increment(value){
+      this.props.incrementQuantity(value)
     }
 
-    decrement(multiplier) {
-      if (multiplier > 1) {
-          this.props.decrementQuantity(multiplier)
+    decrement(value) {
+      if (value > 1) {
+          this.props.decrementQuantity(value)
           return;
       }
     }
 
     render() {
-      const {products, multiplier} = this.props
+      const {products, value} = this.props
       return(
          products.map((item) =>
             <div key={item.id} >
@@ -51,7 +51,7 @@ import {Image,
                           .map(retailer =>
                               <div key={retailer.company_id}>
                                   <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)} </QuantityDescription>
-                                  <MinusButton onClick={() => {this.decrement(multiplier)}}>-</MinusButton><QuantityInput value={multiplier}/><PlusButton id={pack.quantity} onClick={() => {this.increment(multiplier)}}>+</PlusButton>
+                                  <MinusButton onClick={() => {this.decrement(value)}}>-</MinusButton><QuantityInput value={value}/><PlusButton id={pack.quantity} onClick={() => {this.increment(value)}}>+</PlusButton>
                                     <BasketButton onClick={() => {this.handleClick(retailer)}}>Add To Basket</BasketButton>
                               </div>
                       )}

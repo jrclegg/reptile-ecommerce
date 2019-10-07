@@ -15,17 +15,17 @@ export function getData(products){
     }
 }
 
-export function incrementQuantity(multiplier){
+export function incrementQuantity(value){
     return{
         type: "INCREMENT",
-        multiplier: multiplier
+        value: value
     }
 }
 
-export function decrementQuantity(multiplier){
+export function decrementQuantity(value){
     return{
         type: "DECREMENT",
-        multiplier: multiplier
+        value: value
     }
 }
 

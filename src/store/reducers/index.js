@@ -1,7 +1,7 @@
 let defaultState={
     products: [],
     cart: [],
-    multiplier: 1
+    value: 1
 }
 
 const mainReducer=(state = defaultState, action)=>{
@@ -12,14 +12,15 @@ const mainReducer=(state = defaultState, action)=>{
                 products: action.products
             }
         case "INCREMENT":
+        console.log(state)
             return{
                 ...state,
-                multiplier: action.multiplier+1
+                value: action.value+1
             }
         case "DECREMENT":
             return{
                 ...state,
-                multiplier: action.multiplier-1
+                value: action.value-1
             }
         case 'ADD_TO_CART':
             const  newCart = [...state.cart, action.item]

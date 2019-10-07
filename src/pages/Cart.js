@@ -39,7 +39,7 @@ class Cart extends Component{
     }
 
     render(){
-      const {cart, multiplier} = this.props
+      const {cart, value} = this.props
       return(
           cart.map((cartItem) =>
               <ItemWrapper key={cartItem.price}>
@@ -57,11 +57,11 @@ class Cart extends Component{
                 </QuantityWrapper>
                 <QuantityWrapper>
                   <p>Quantity</p>
-                  <p>{multiplier}</p>
+                  <p>{value}</p>
                 </QuantityWrapper>
                 <TotalWrapper>
                   <p>Total</p>
-                  <p>£{multiplier * cartItem.price}</p>
+                  <p>£{value * cartItem.price}</p>
                 </TotalWrapper>
                 <button onClick={() => {this.handleRemove(cartItem)}}>Remove</button>
               </ItemWrapper>
