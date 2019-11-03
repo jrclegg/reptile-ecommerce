@@ -22,8 +22,8 @@ const Logo = styled.img`
 `
 
 const NavList = styled.ul`
-  @media (max-width: 768px) {
-    
+  @media (min-width: 768px) {
+    padding-bottom: 20px;
   }
 `
 const NavItem = styled(NavLink)`
@@ -32,12 +32,20 @@ const NavItem = styled(NavLink)`
   color: ${props => props.theme.colors.secondary};
   font-weight: 800;
   cursor: pointer;
+  margin-left: 45px;
   @media (max-width: 768px) {
     display: block;
     text-align: left;
     margin-top: 15px;
     padding-bottom: 10px;
-    margin-left: 10px;
+    margin-left: 30px;
+  }
+`
+const BasketLink = styled(NavLink)`
+  @media only screen and (min-width: 768px) {
+    float: right;
+    margin-top: 15px;
+    margin-right: 40px;
   }
 `
 const NavIcon = styled.i`
@@ -55,8 +63,6 @@ const NavItemDropdown = styled(NavItem)`
    font-weight: normal;
   }
 `
-
-
 const NavToggle = styled.div`
   float: right;
   margin: 10px;
@@ -67,23 +73,29 @@ const NavToggle = styled.div`
   :focus {
     border: solid 1px blue;
   }
+  @media (min-width: 768px) {
+    display: none;
+   }
 `
 const NavItemArrow = styled.i`
   float: right;
   margin-right: 30px;
   margin-top: -30px;
   color: white;
+   @media (min-width: 768px) {
+    display: none;
+   }
 `
+
 class Nav extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-       showMenu: false,
+       showMenu: true,
        showFrozenItems: false,
        showLiveItems: false
     }
   }
-  
   
   showMenu() {
     this.setState({ showMenu: !this.state.showMenu });
@@ -115,19 +127,18 @@ class Nav extends React.Component {
         <NavLink to="/">
           <MainTitle>CompareTheReptile.com</MainTitle>
         </NavLink>
-        <NavLink to="/basket">
+        <BasketLink to="/basket">
           <BasketIcon className="fas fa-shopping-cart">
-            
           </BasketIcon>
-        </NavLink>
+        </BasketLink>
         <NavToggle id="navToggle" tabIndex="0" onClick={(event) => this.showMenu(event)}>
-          { showMenu !== true ?
-          <NavIcon className="fa fa-bars menu"></NavIcon>
-          : <NavIcon className="fas fa-times"></NavIcon>
+          { showMenu === true ?
+              <NavIcon className="fa fa-bars menu"></NavIcon>
+              : <NavIcon className="fas fa-times"></NavIcon>
           }
         </NavToggle>
         <nav>
-          {showMenu &&
+          { showMenu &&
             <NavList>
               <NavItem id="frozenFood" tabIndex="1" to="/frozenfood" onClick={(event) => this.toggleDropdown(event)}>
                 Frozen Food
