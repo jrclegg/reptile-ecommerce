@@ -1,11 +1,11 @@
 import React from 'react';
 import * as actionCreators from "../store/actions/index"
 import {Image, 
-  QuantityDescription, QuantityTitle, 
-  QuantityInput, BasketButton, 
-  Parent, MainTitle, PlusButton, MinusButton} from '../components/index'
-  import mouse from '../assets/mouse.jpg'
-  import { connect } from 'react-redux'
+  QuantityDescription, QuantityTitle,  BasketButton, 
+  Parent, MainTitle} from '../components/index'
+import mouse from '../assets/mouse.jpg'
+import { connect } from 'react-redux'
+import Counter from './Counter'
 
   class GetProducts extends React.Component {
     constructor(props) {
@@ -27,7 +27,7 @@ import {Image,
 
     decrement(value) {
       if (value > 1) {
-          this.props.decrementQuantity(value)
+        this.props.decrementQuantity(value)
           return;
       }
     }
@@ -44,18 +44,27 @@ import {Image,
                   <Image src={mouse}></Image>
                 </Parent>
                 {item.packs.map(pack =>
+                    pack.quantity === 10 | pack.quantity === 25 | pack.quantity === 100 ? 
                   <div key={pack.quantity}>
                       <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
                       {pack.retailers
                           .sort((a,b) => a.price - b.price)
                           .map(retailer =>
+                            retailer.company_name === "Swell Reptiles" ? 
                               <div key={retailer.company_id}>
                                   <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)} </QuantityDescription>
-                                  <MinusButton onClick={() => {this.decrement(value)}}>-</MinusButton><QuantityInput value={value}/><PlusButton id={pack.quantity} onClick={() => {this.increment(value)}}>+</PlusButton>
-                                    <BasketButton onClick={() => {this.handleClick(retailer)}}>Add To Basket</BasketButton>
+                                  <Counter 
+                                    increment={() => {this.increment(value)}}
+                                    decrement={() => {this.decrement(value)}}
+                                    value={value} 
+                                  />
+                                  <BasketButton onClick={() => {this.handleClick(retailer)}}>Add To Basket</BasketButton>
                               </div>
+                              : ''
+                              
                       )}
                   </div>
+                  : ''
                 )}
                 </React.Fragment>
                 : ''
