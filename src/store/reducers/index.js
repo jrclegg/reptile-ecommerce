@@ -1,7 +1,7 @@
 let defaultState={
     products: [],
     cart: [],
-    value: 1
+    value: [0]
 }
 
 const mainReducer=(state = defaultState, action)=>{
@@ -12,7 +12,6 @@ const mainReducer=(state = defaultState, action)=>{
                 products: action.products
             }
         case "INCREMENT":
-        console.log(state)
             return{
                 ...state,
                 value: action.value+1
