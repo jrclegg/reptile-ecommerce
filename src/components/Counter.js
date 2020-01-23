@@ -24,23 +24,22 @@ class Counter extends React.Component {
 
   decrement(e){
     let id = e.target.id;
+    console.log('check');
     this.setState({
       value: this.state.value.map((item, index) => {
-        if (index === id && !item < 1) return item - 1;
+        if (index == id && item > 0) return item - 1;
         else return item;
       })
     });
   }
-  
-
   render() {
-    return this.state.value.map((item, id) => {
       return (
+        this.state.value.map((item, id) =>
         <div>
           <MinusButton onClick={this.decrement}>-</MinusButton><QuantityInput value={item} /><PlusButton id={id} onClick={this.increment}>+</PlusButton>
         </div>
+        )
       );
-    });
   }
 }
 
