@@ -29,7 +29,6 @@ const TotalWrapper = styled.div`
 `
 
 class Cart extends Component{
-
     handleAddQuantity = (id)=>{
       this.props.addQuantity(id);
     }

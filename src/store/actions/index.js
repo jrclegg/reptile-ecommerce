@@ -9,7 +9,7 @@ export function loadData() {
 }
 
 export function getData(products){
-    return{
+    return {
         type:"GET_DATA",
         products: products
     }
@@ -29,11 +29,12 @@ export function decrementQuantity(value){
     }
 }
 
-export function addToCart(item) {
+export function addToCart(item, value) {
     return{
         type: "ADD_TO_CART",
         id: item.product_id,
-        item: item
+        item: item,
+        value: value
     }
 }
 

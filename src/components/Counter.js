@@ -1,4 +1,6 @@
 import React from 'react';
+import * as actionCreators from "../store/actions/index"
+import { connect } from 'react-redux'
 import {
   QuantityInput,
   PlusButton, MinusButton} from '../components/index'
@@ -7,41 +9,47 @@ class Counter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: [0]
-    };
+      value: 1
+    }
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
   }
-  increment(e){
-    let id = e.target.id;
+  componentDidMount(){
     this.setState({
-      value: this.state.value.map((item, index) => {
-        if (index == id) return item + 1;
-        else return item;
-      })
-    });
+      value: this.state.value
+    })
+    this.props.incrementQuantity(this.state.value);
+  }
+  
+  increment(){
+    this.setState({
+      value: this.state.value+1
+    })
+    this.props.incrementQuantity(this.state.value+1);
   }
 
-  decrement(e){
-    let id = e.target.id;
-    console.log('check');
-    this.setState({
-      value: this.state.value.map((item, index) => {
-        if (index == id && item > 0) return item - 1;
-        else return item;
+  decrement(){
+    if (this.state.value > 1) {
+      this.setState({
+        value: this.state.value-1
       })
-    });
+      this.props.incrementQuantity(this.state.value-1);
+    }
   }
+
   render() {
-      return (
-        this.state.value.map((item, id) =>
+    return (
         <div>
-          <MinusButton onClick={this.decrement}>-</MinusButton><QuantityInput value={item} /><PlusButton id={id} onClick={this.increment}>+</PlusButton>
+          <MinusButton onClick={this.decrement}>-</MinusButton><QuantityInput value={this.state.value} /><PlusButton onClick={this.increment}>+</PlusButton>
         </div>
-        )
       );
   }
 }
 
-export default Counter
+const mapStateToProps=(state)=>{
+  return state
+};
+
+export default connect(mapStateToProps, actionCreators)(Counter);
+
 

@@ -1,11 +1,10 @@
 let defaultState={
     products: [],
-    cart: [],
-    value: [0]
+    cart: []
 }
 
-const mainReducer=(state = defaultState, action)=>{
-    switch(action.type){
+const mainReducer = (state = defaultState, action) => {
+    switch (action.type) {
         case "GET_DATA":
             return{
                 ...state,
@@ -14,12 +13,12 @@ const mainReducer=(state = defaultState, action)=>{
         case "INCREMENT":
             return{
                 ...state,
-                value: action.value+1
+                value: action.value
             }
         case "DECREMENT":
             return{
                 ...state,
-                value: action.value-1
+                value: action.value
             }
         case 'ADD_TO_CART':
             const  newCart = [...state.cart, action.item]
@@ -30,7 +29,7 @@ const mainReducer=(state = defaultState, action)=>{
             } else {
                 return {
                     ...state, 
-                    cart: newCart
+                    cart: newCart,
                 }
             }
         case 'REMOVE_FROM_CART':

@@ -14,24 +14,14 @@ import Counter from './Counter'
         name: '',
       }
     }
+    
     componentWillMount() {
       this.props.loadData();
     }
     handleClick = (id)=>{
       this.props.addToCart(id);
     }
-
-    increment(value){
-      this.props.incrementQuantity(value)
-    }
-
-    decrement(value) {
-      if (value > 1) {
-        this.props.decrementQuantity(value)
-          return;
-      }
-    }
-
+  
     render() {
       const {products, value} = this.props
       return(
@@ -54,8 +44,8 @@ import Counter from './Counter'
                               <div key={retailer.company_id}>
                                   <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)} </QuantityDescription>
                                   <Counter 
-                                    increment={() => {this.increment(value)}}
-                                    decrement={() => {this.decrement(value)}}
+                                    increment={() => {this.increment(this.props.value)}}
+                                    decrement={() => {this.decrement(this.props.value)}}
                                     value={value} 
                                   />
                                   <BasketButton onClick={() => {this.handleClick(retailer)}}>Add To Basket</BasketButton>
