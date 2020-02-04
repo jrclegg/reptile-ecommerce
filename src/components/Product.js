@@ -14,14 +14,15 @@ import Counter from './Counter'
         name: '',
       }
     }
-    
     componentWillMount() {
       this.props.loadData();
     }
+
     handleClick = (id)=>{
       this.props.addToCart(id);
+      localStorage.setItem('cart', JSON.stringify(this.props.cart))
     }
-  
+
     render() {
       const {products, value} = this.props
       return(
@@ -51,7 +52,6 @@ import Counter from './Counter'
                                   <BasketButton onClick={() => {this.handleClick(retailer)}}>Add To Basket</BasketButton>
                               </div>
                               : ''
-                              
                       )}
                   </div>
                   : ''

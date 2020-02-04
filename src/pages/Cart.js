@@ -4,7 +4,6 @@ import '../components/BasketButton'
 import styled from 'styled-components'
 import * as actionCreators from "../store/actions/index"
 
-
 const ItemWrapper = styled.div`
   margin: 10px;
   width: 90%;
@@ -29,6 +28,11 @@ const TotalWrapper = styled.div`
 `
 
 class Cart extends Component{
+
+    componentDidMount() {
+      this.setState({savedCart : JSON.stringify(localStorage.getItem('cart'))})
+    };
+
     handleAddQuantity = (id)=>{
       this.props.addQuantity(id);
     }
