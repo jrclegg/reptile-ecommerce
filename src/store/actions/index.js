@@ -15,6 +15,13 @@ export function getData(products){
     }
 }
 
+export function incrementDefault(value){
+    return{
+        type: "INCREMENT DEFAULT",
+        value: value
+    }
+}
+
 export function incrementQuantity(value){
     return{
         type: "INCREMENT",

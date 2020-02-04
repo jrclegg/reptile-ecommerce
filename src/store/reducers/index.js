@@ -10,15 +10,20 @@ const mainReducer = (state = defaultState, action) => {
                 ...state,
                 products: action.products
             }
-        case "INCREMENT":
-            return{
+        case "INCREMENT DEFAULT":
+            return {
                 ...state,
-                value: action.value
-            }
+                 value: action.value
+            } 
+        case "INCREMENT":
+            return {
+                ...state,
+                value: action.value+1
+            }   
         case "DECREMENT":
             return{
                 ...state,
-                value: action.value
+                value: action.value-1
             }
         case 'ADD_TO_CART':
             const  newCart = [...state.cart, action.item]
@@ -29,7 +34,7 @@ const mainReducer = (state = defaultState, action) => {
             } else {
                 return {
                     ...state, 
-                    cart: newCart,
+                    cart: newCart
                 }
             }
         case 'REMOVE_FROM_CART':
