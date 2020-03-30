@@ -1,7 +1,7 @@
 import React from 'react';
 import * as actionCreators from "../store/actions/index"
 import {Image, 
-  QuantityDescription, QuantityTitle,  BasketButton, 
+  QuantityDescription, PackWrapper, QuantityTitle,  BasketButton, 
   Parent, MainTitle} from '../components/index'
 import mouse from '../assets/mouse.jpg'
 import { connect } from 'react-redux'
@@ -42,7 +42,7 @@ import Counter from './Counter'
                           .sort((a,b) => a.price - b.price)
                           .map(retailer =>
                             retailer.company_name === "Swell Reptiles" ? 
-                              <div key={retailer.company_id}>
+                              <PackWrapper key={retailer.company_id}>
                                   <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)} </QuantityDescription>
                                   <Counter 
                                     increment={() => {this.increment(this.props.value)}}
@@ -50,7 +50,7 @@ import Counter from './Counter'
                                     value={value} 
                                   />
                                   <BasketButton onClick={() => {this.handleClick(retailer)}}>Add To Basket</BasketButton>
-                              </div>
+                              </PackWrapper>
                               : ''
                       )}
                   </div>

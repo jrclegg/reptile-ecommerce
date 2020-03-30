@@ -3,7 +3,14 @@ import * as actionCreators from "../store/actions/index"
 import { connect } from 'react-redux'
 import {
   QuantityInput,
-  PlusButton, MinusButton} from '../components/index'
+  Button} from '../components/index'
+import styled from 'styled-components'
+
+const CounterWrapper = styled.div`
+   display: inline-block;
+   margin-left: 60px;
+`
+
   
 class Counter extends React.Component {
   constructor(props) {
@@ -40,9 +47,9 @@ class Counter extends React.Component {
 
   render() {
     return (
-        <div>
-          <MinusButton onClick={this.decrement}>-</MinusButton><QuantityInput value={this.state.value} /><PlusButton onClick={this.increment}>+</PlusButton>
-        </div>
+        <CounterWrapper>
+          <Button onClick={this.decrement}>-</Button><QuantityInput value={this.state.value} /><Button onClick={this.increment}>+</Button>
+        </CounterWrapper>
       );
   }
 }

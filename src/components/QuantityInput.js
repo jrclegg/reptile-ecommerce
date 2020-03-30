@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 const QuantityInput = styled.input`
-  width: 30px;
-  height: 30px;
-  margin-left: 40%;
+  display: inline-block;
+  width: 25px;
+  text-align: center;
+  height: 25px;
 `
 export default QuantityInput
