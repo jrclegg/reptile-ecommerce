@@ -7,13 +7,13 @@ const BasketButton = styled.button`
    margin-left: 40px;
    @media only screen and (min-width: 720px) {
       width: 230px;
+      margin-left: 60px;
       height: 70px;
       margin-bottom: 20px;
       margin-right: 10px;
     }
     @media only screen and (min-width: 1024px) {
       width: 300px;
-      margin-left: 60px;
     }
 `
 
