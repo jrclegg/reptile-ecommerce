@@ -43,7 +43,7 @@ import Counter from './Counter'
                           .map(retailer =>
                             retailer.company_name === "Swell Reptiles" ? 
                               <PackWrapper key={retailer.company_id}>
-                                  <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)} </QuantityDescription>
+                                  <QuantityDescription>{retailer.company_name}<br/><br/>£{retailer.price.toFixed(2)} </QuantityDescription>
                                   <Counter 
                                     increment={() => {this.increment(this.props.value)}}
                                     decrement={() => {this.decrement(this.props.value)}}
