@@ -8,7 +8,7 @@ import QuantityDescription from './QuantityDescription'
 import QuantityInput from './QuantityInput'
 import QuantityTitle from './QuantityTitle'
 import getProducts from './Product'
-import Button from './MinusButton'
+import Button from './Button'
 import PackWrapper from './PackWrapper'
 
 export {

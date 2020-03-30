@@ -8,7 +8,10 @@ import styled from 'styled-components'
 
 const CounterWrapper = styled.div`
    display: inline-block;
-   margin-left: 60px;
+   margin-left: 40px;
+   @media only screen and (min-width: 720px) {
+    margin-left: 80px;
+  }
 `
 
   
