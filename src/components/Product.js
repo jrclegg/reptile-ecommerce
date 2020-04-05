@@ -6,6 +6,14 @@ import {Image,
   Parent, MainTitle, PlusButton, MinusButton} from '../components/index'
   import mouse from '../assets/mouse.jpg'
   import { connect } from 'react-redux'
+  import styled from 'styled-components'
+
+  const PackWrapper = styled.div`
+    padding: 0;
+    text-align: center;
+    margin-bottom: 20px;
+`
+
 
   class GetProducts extends React.Component {
     constructor(props) {
@@ -49,11 +57,10 @@ import {Image,
                       {pack.retailers
                           .sort((a,b) => a.price - b.price)
                           .map(retailer =>
-                              <div key={retailer.company_id}>
+                              <PackWrapper key={retailer.company_id}>
                                   <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)} </QuantityDescription>
-                                  <MinusButton onClick={() => {this.decrement(value)}}>-</MinusButton><QuantityInput value={value}/><PlusButton id={pack.quantity} onClick={() => {this.increment(value)}}>+</PlusButton>
-                                    <BasketButton onClick={() => {this.handleClick(retailer)}}>Add To Basket</BasketButton>
-                              </div>
+                                  <BasketButton onClick={() => {this.handleClick(retailer)}}>Go To Store</BasketButton>
+                              </PackWrapper>
                       )}
                   </div>
                 )}
