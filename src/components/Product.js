@@ -14,9 +14,14 @@ import {Image,
     margin-bottom: 20px;
   `
   const LogoImage = styled.img`
-  height: 100px;
-  width: 140px;
-`
+    width: 100px;
+    margin-left: 10px;
+    display: inline-block;
+  ` 
+  const ReviewImage = styled.img`
+   margin-left: 30px;
+   width: 80px;
+  ` 
 
 
   class GetProducts extends React.Component {
@@ -64,6 +69,7 @@ import {Image,
                               <PackWrapper key={retailer.company_id}>
                                   <LogoImage alt="companyLogo" src={retailer.company_logo}/>
                                   <QuantityDescription>{retailer.price.toFixed(2)} </QuantityDescription>
+                                  <ReviewImage alt="companyReview" src={retailer.company_review}/>
                                   <BasketButton onClick={() => {this.handleClick(retailer)}}>Go To Store</BasketButton>
                               </PackWrapper>
                       )}
