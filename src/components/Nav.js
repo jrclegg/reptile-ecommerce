@@ -127,10 +127,6 @@ class Nav extends React.Component {
         <NavLink to="/">
           <MainTitle>CompareTheReptile.com</MainTitle>
         </NavLink>
-        <BasketLink to="/basket">
-          <BasketIcon className="fas fa-shopping-cart">
-          </BasketIcon>
-        </BasketLink>
         <NavToggle id="navToggle" tabIndex="0" onClick={(event) => this.showMenu(event)}>
           { showMenu === true ?
               <NavIcon className="fa fa-bars menu"></NavIcon>
