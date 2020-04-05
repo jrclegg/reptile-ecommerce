@@ -12,6 +12,10 @@ import {Image,
     padding: 0;
     text-align: center;
     margin-bottom: 20px;
+  `
+  const LogoImage = styled.img`
+  height: 100px;
+  width: 140px;
 `
 
 
@@ -58,7 +62,8 @@ import {Image,
                           .sort((a,b) => a.price - b.price)
                           .map(retailer =>
                               <PackWrapper key={retailer.company_id}>
-                                  <QuantityDescription>{retailer.company_name}<br/><br/>{retailer.price.toFixed(2)} </QuantityDescription>
+                                  <LogoImage alt="companyLogo" src={retailer.company_logo}/>
+                                  <QuantityDescription>{retailer.price.toFixed(2)} </QuantityDescription>
                                   <BasketButton onClick={() => {this.handleClick(retailer)}}>Go To Store</BasketButton>
                               </PackWrapper>
                       )}

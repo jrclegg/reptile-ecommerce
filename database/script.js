@@ -21,7 +21,7 @@ connection.connect(function (error){
 
 app.get('/projects', function(request, response){
   response.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-  connection.query("SELECT a.ProductID, b.ProductName, b.ProductWeight, c.CompanyID, c.CompanyName, a.Quantity, a.Price FROM reptile_ecommerce.prices a LEFT OUTER JOIN reptile_ecommerce.products b ON a.ProductID = b.ProductID LEFT OUTER JOIN reptile_ecommerce.companies c ON c.CompanyID = a.CompanyID ORDER BY a.CompanyID, a.Quantity", function (error, rows, fields){
+  connection.query("SELECT a.ProductID, b.ProductName, b.ProductWeight, c.CompanyID, c.CompanyName, c.CompanyLogo, c.CompanyLogo, a.Quantity, a.Price FROM reptile_ecommerce.prices a LEFT OUTER JOIN reptile_ecommerce.products b ON a.ProductID = b.ProductID LEFT OUTER JOIN reptile_ecommerce.companies c ON c.CompanyID = a.CompanyID ORDER BY a.CompanyID, a.Quantity", function (error, rows, fields){
       //callback
       if(error){
         console.log(error)
@@ -38,6 +38,7 @@ app.get('/projects', function(request, response){
                 "price": "Price",
                 "product_id": "ProductID",
                 "company_name": "CompanyName",
+                "company_logo": "CompanyLogo",
                 "product_name": "ProductName",
                 "quantity": "Quantity",
                 "total": "Total",
