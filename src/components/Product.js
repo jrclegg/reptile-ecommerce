@@ -13,15 +13,35 @@ import {Image,
     text-align: center;
     margin-bottom: 20px;
   `
+  const Text = styled.p`
+    font-size: 13px;
+  `
   const LogoImage = styled.img`
     width: 100px;
     margin-left: 10px;
     display: inline-block;
   ` 
   const ReviewImage = styled.img`
-   margin-left: 30px;
-   width: 80px;
+    margin-left: 30px;
+    width: 80px;
+    display: block;
   ` 
+  const NoReview = styled.p`
+    margin-left: 30px;
+    width: 80px;
+    display: inline-block;
+    white-space: nowrap;
+  ` 
+  const Link = styled.a`
+    margin-left: 30px;
+    margin-top: 5px;
+    width: 80px;
+    display: block;
+    white-space: nowrap;
+  `
+  const WrapDiv = styled.div`
+    display: inline-block;
+  `
 
 
   class GetProducts extends React.Component {
@@ -49,6 +69,13 @@ import {Image,
       }
     }
 
+    checkFreeShipping(freeShipping){
+      if (freeShipping){
+        return 'Free Shipping: Over £' + freeShipping;
+      }
+      return false;
+    }
+
     render() {
       const {products, value} = this.props
       return(
@@ -67,9 +94,20 @@ import {Image,
                           .sort((a,b) => a.price - b.price)
                           .map(retailer =>
                               <PackWrapper key={retailer.company_id}>
-                                  <LogoImage alt="companyLogo" src={retailer.company_logo}/>
+                              <WrapDiv>
+                                <LogoImage alt="companyLogo" src={retailer.company_logo}/>
+                                <Text>Delivery costs: from £{retailer.frozen_shipping}</Text>
+                                <Text>{this.checkFreeShipping(retailer.free_shipping)}</Text>
+                              </WrapDiv>
                                   <QuantityDescription>{retailer.price.toFixed(2)} </QuantityDescription>
-                                  <ReviewImage alt="companyReview" src={retailer.company_review}/>
+                                  {
+                                    retailer.company_review ?
+                                    <WrapDiv>
+                                      <ReviewImage alt="companyReview" src={retailer.company_review}/>
+                                      <Link href={retailer.company_review_link}>{retailer.company_review_numbers}</Link>
+                                    </WrapDiv>
+                                    : <NoReview>Not Available</NoReview>
+                                  }
                                   <BasketButton onClick={() => {this.handleClick(retailer)}}>Go To Store</BasketButton>
                               </PackWrapper>
                       )}

@@ -21,7 +21,7 @@ connection.connect(function (error){
 
 app.get('/projects', function(request, response){
   response.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-  connection.query("SELECT a.ProductID, b.ProductName, b.ProductWeight, c.CompanyID, c.CompanyName, c.CompanyReview, c.CompanyLogo, c.CompanyLogo, a.Quantity, a.Price FROM reptile_ecommerce.prices a LEFT OUTER JOIN reptile_ecommerce.products b ON a.ProductID = b.ProductID LEFT OUTER JOIN reptile_ecommerce.companies c ON c.CompanyID = a.CompanyID ORDER BY a.CompanyID, a.Quantity", function (error, rows, fields){
+  connection.query("SELECT a.ProductID, b.ProductName, b.ProductWeight, c.CompanyID, c.CompanyName, c.CompanyReview, c.CompanyReviewLink, c.CompanyReviewNumbers, c.FrozenShipping, c.FreeShipping, c.CompanyLogo, c.CompanyLogo, a.Quantity, a.Price FROM reptile_ecommerce.prices a LEFT OUTER JOIN reptile_ecommerce.products b ON a.ProductID = b.ProductID LEFT OUTER JOIN reptile_ecommerce.companies c ON c.CompanyID = a.CompanyID ORDER BY a.CompanyID, a.Quantity", function (error, rows, fields){
       //callback
       if(error){
         console.log(error)
@@ -39,6 +39,10 @@ app.get('/projects', function(request, response){
                 "product_id": "ProductID",
                 "company_name": "CompanyName",
                 "company_review": "CompanyReview",
+                "company_review_link": "CompanyReviewLink",
+                "company_review_numbers": "CompanyReviewNumbers",
+                "frozen_shipping": "FrozenShipping",
+                "free_shipping": "FreeShipping",
                 "company_logo": "CompanyLogo",
                 "product_name": "ProductName",
                 "quantity": "Quantity",
