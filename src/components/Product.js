@@ -1,10 +1,25 @@
 import React from 'react';
-import * as actionCreators from "../store/actions/index"
-import {Image, 
+import Footer from '../components/Footer'
+import {Image, ListingImage,
   QuantityDescription, QuantityTitle, 
   QuantityInput, BasketButton, 
   Parent, MainTitle, PlusButton, MinusButton} from '../components/index'
+  import * as actionCreators from "../store/actions/index"
+  import locust from '../assets/locust.jpg'
+  import brownCricket from '../assets/browncricket.jpg'
+  import blackCricket from '../assets/blackcricket.jpg'
+  import mealworms from '../assets/mealworms.jpg'
+  import waxworms from '../assets/waxworms.jpg'
   import mouse from '../assets/mouse.jpg'
+  import rat from '../assets/rat.jpg'
+  import multimammate from '../assets/multimammate.jpg'
+  import guineapig from '../assets/guineapig.jpg'
+  import hamster from '../assets/hamster.jpg'
+  import gerbil from '../assets/gerbil.jpg'
+  import chick from '../assets/chick.jpg'
+  import quail from '../assets/quail.jpg'
+
+
   import { connect } from 'react-redux'
   import styled from 'styled-components'
 
@@ -42,7 +57,21 @@ import {Image,
   const WrapDiv = styled.div`
     display: inline-block;
   `
-
+  const LinkButton = styled.a`
+   width: 100px;
+   height: 45px;
+   display: inline-block;
+   margin-left: 40px;
+   @media only screen and (min-width: 720px) {
+    width: 130px; 
+    height: 70px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+  }
+  @media only screen and (min-width: 1024px) {
+    width: 300px;
+  }
+`
 
   class GetProducts extends React.Component {
     constructor(props) {
@@ -76,8 +105,63 @@ import {Image,
       return false;
     }
 
+    ifCompanyIsOnlineReptileShop(companyName){
+      if (companyName === "Online Reptile Shop"){
+        return (
+          <React.Fragment>
+          <Text>For orders over £20 only*</Text>
+        </React.Fragment>
+        )
+      }
+      return false
+    }
+
+    filterFoodItemImage(productName){
+      if (productName.includes("Locusts")){
+          return locust;
+      } else if(productName.includes("Brown")){
+        return brownCricket;
+      } else if (productName.includes("Black")) {
+        return blackCricket;
+      } else if (productName.includes("Mealworm")) {
+        return mealworms;
+      } else if (productName.includes("Waxworm")) {
+        return waxworms;
+      } else if (productName.includes("Multimammate")) {
+        return multimammate;
+      } else if (productName.includes("Mice") || productName.includes("Mouse")) {
+        return mouse;
+      } else if (productName.includes("Rat")) {
+        return rat;
+      } else if (productName.includes("Guinea Pig")) {
+        return guineapig;
+      } else if (productName.includes("Hamster")) {
+        return hamster;
+      } else if (productName.includes("Gerbil")) {
+        return gerbil;
+      } else if (productName.includes("Chick")) {
+        return chick;
+      } else if (productName.includes("Quail")) {
+        return quail;
+      }
+    }
+
+    ifCompanyIsEvolutionReptiles(companyName){
+      if (companyName === "Evolution Reptiles"){
+        return (
+          <React.Fragment>
+          <Text>£10.92 for orders above £50*</Text>
+        </React.Fragment>
+        )
+      }
+      return false
+    }
+
+    
+
     render() {
       const {products, value} = this.props
+      console.log(products)
       return(
          products.map((item) =>
             <div key={item.id} >
@@ -85,7 +169,7 @@ import {Image,
               <React.Fragment>
                 <MainTitle>{item.product_name}</MainTitle>
                 <Parent>
-                  <Image src={mouse}></Image>
+                  <ListingImage src={this.filterFoodItemImage(item.product_name)}></ListingImage>
                 </Parent>
                 {item.packs.map(pack =>
                   <div key={pack.quantity}>
@@ -96,23 +180,39 @@ import {Image,
                               <PackWrapper key={retailer.company_id}>
                               <WrapDiv>
                                 <LogoImage alt="companyLogo" src={retailer.company_logo}/>
-                                <Text>Delivery costs: from £{retailer.frozen_shipping}</Text>
-                                <Text>{this.checkFreeShipping(retailer.free_shipping)}</Text>
+                                {
+                                  item.product_id < 52 ?
+                                  <React.Fragment>
+                                    <Text>Delivery costs: from £{retailer.frozen_shipping}{this.ifCompanyIsOnlineReptileShop(retailer.company_name) ? '*' : ''}</Text>
+                                      {this.ifCompanyIsOnlineReptileShop(retailer.company_name)}
+                                      {this.ifCompanyIsEvolutionReptiles(retailer.company_name)}
+                                    <Text>{this.checkFreeShipping(retailer.free_shipping)}</Text>
+                                   </React.Fragment>
+                                   : item.product_id >= 53 ?
+                                   <React.Fragment>
+                                    <Text>Delivery costs: from £{retailer.live_shipping}{this.ifCompanyIsOnlineReptileShop(retailer.company_name) ? '*' : ''}</Text>
+                                    {this.ifCompanyIsOnlineReptileShop(retailer.company_name)}
+                                    {this.ifCompanyIsEvolutionReptiles(retailer.company_name)}
+                                    <Text>{this.checkFreeShipping(retailer.free_shipping)}</Text>
+                                  </React.Fragment>
+                                   : ''
+                                }
                               </WrapDiv>
-                                  <QuantityDescription>{retailer.price.toFixed(2)} </QuantityDescription>
+                                  <QuantityDescription>£{retailer.price.toFixed(2)} </QuantityDescription>
                                   {
                                     retailer.company_review ?
                                     <WrapDiv>
                                       <ReviewImage alt="companyReview" src={retailer.company_review}/>
-                                      <Link href={retailer.company_review_link}>{retailer.company_review_numbers}</Link>
+                                      <Link src={retailer.company_review_link}>{retailer.company_review_numbers}</Link>
                                     </WrapDiv>
                                     : <NoReview>Not Available</NoReview>
                                   }
-                                  <BasketButton onClick={() => {this.handleClick(retailer)}}>Go To Store</BasketButton>
+                                  <LinkButton href={retailer.product_link} type="button">Go To Store</LinkButton>
                               </PackWrapper>
                       )}
                   </div>
                 )}
+                   <Footer/>
                 </React.Fragment>
                 : ''
               }
@@ -124,7 +224,7 @@ import {Image,
 
 
   const mapStateToProps=(state)=>{
-    return state
-};
-
-export default connect(mapStateToProps, actionCreators)(GetProducts);
+      return state
+  };
+    
+  export default connect(mapStateToProps, actionCreators)(GetProducts);
