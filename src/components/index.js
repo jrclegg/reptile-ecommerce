@@ -1,5 +1,6 @@
 import BasketButton from './BasketButton'
 import Image from './Image'
+import ListingImage from './ListingImage'
 import MainTitle from './MainTitle'
 import Nav from './Nav'
 import Parent from './Parent'
@@ -23,5 +24,6 @@ export {
     QuantityInput,
     QuantityTitle,
     PlusButton,
-    MinusButton
+    MinusButton,
+    ListingImage
 }
