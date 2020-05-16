@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from '../../components/Image.js'
-import mouse from '../../assets/mouseother.jpg'
+import rabbit from '../../assets/rabbit.jpg'
 import { Link } from "react-router-dom";
+import Footer from '../../components/Footer'
 
 const Parent = styled.div`
     display: grid;
     margin-top: 30px;
+    margin-left: 15px;
     grid-template-columns: 1fr 1fr;
 `
 const FrozenLink = styled(Link)`
@@ -19,29 +21,21 @@ class Rabbits extends React.Component {
     return (
       <div>
       <Parent>
-        <Link to="/Rabbits/DayOldRabbits"><Image src={mouse} alt="mouse"/></Link>
-        <Link to="/Rabbits/MiniRabbits"><Image src={mouse} alt="mouse"/></Link>
-        <FrozenLink to="/Rabbits/DayOldRabbits">Day Old Rabbits</FrozenLink>
-        <FrozenLink to="/Rabbits/MiniRabbits">Mini Rabbits</FrozenLink>
+        <FrozenLink to="/Rabbits/DayOldRabbits"><Image src={rabbit} alt="mouse"/>Day Old Rabbits</FrozenLink>
+        <FrozenLink to="/Rabbits/MiniRabbits"><Image src={rabbit} alt="mouse"/>Mini Rabbits</FrozenLink>
       </Parent>
       <Parent>
-        <Link to="/Rabbits/SmallRabbits"><Image src={mouse} alt="mouse"/></Link>
-        <Link to="/Rabbits/MediumRabbits"><Image src={mouse} alt="mouse"/></Link>
-        <FrozenLink to="/Rabbits/SmallRabbits">Small Rabbits</FrozenLink>
-        <FrozenLink  to="/Rabbits/MediumRabbits">Medium Rabbits</FrozenLink>
+        <FrozenLink to="/Rabbits/SmallRabbits"><Image src={rabbit} alt="mouse"/>Small Rabbits</FrozenLink>
+        <FrozenLink  to="/Rabbits/MediumRabbits"><Image src={rabbit} alt="mouse"/>Medium Rabbits</FrozenLink>
       </Parent>
       <Parent>
-        <Link to="/Rabbits/LargeRabbits"><Image src={mouse} alt="mouse"/></Link>
-        <Link to="/Rabbits/ExtraLargeRabbits"><Image src={mouse} alt="mouse"/></Link>
-        <FrozenLink to="/Rabbits/LargeRabbits">Large Rabbits</FrozenLink>
-        <FrozenLink to="/Rabbits/ExtraLargeRabbits">Extra Large Rabbits</FrozenLink>
+        <FrozenLink to="/Rabbits/LargeRabbits"><Image src={rabbit} alt="mouse"/>Large Rabbits</FrozenLink>
+        <FrozenLink to="/Rabbits/ExtraLargeRabbits"><Image src={rabbit} alt="mouse"/>Extra Large Rabbits</FrozenLink>
       </Parent>
       <Parent>
-        <Link to="/Rabbits/GiantRabbits"><Image src={mouse} alt="mouse"/></Link>
-        <Link to="/Rabbits/MiniRabbits"><Image src={mouse} alt="mouse"/></Link>
-        <FrozenLink to="/Rabbits/GiantRabbits">Giant Rabbits</FrozenLink>
-        <FrozenLink to="/Rabbits/MiniRabbits">Small Quail</FrozenLink>
+        <FrozenLink to="/Rabbits/GiantRabbits"><Image src={rabbit} alt="mouse"/>Giant Rabbits</FrozenLink>
       </Parent>
+      <Footer/>
       </div>
     )
   }

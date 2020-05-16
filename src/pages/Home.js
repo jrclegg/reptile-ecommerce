@@ -1,7 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from "react-router-dom";
 import Image from '../components/Image.js'
-import mouse from '../assets/mouseother.jpg'
+import mouse from '../assets/mouse.jpg'
+import rat from '../assets/rat.jpg'
+import browncricket from '../assets/browncricket.jpg'
+import locust from '../assets/locust.jpg'
+import Footer from '../components/Footer'
+
 
 const StyledTitle = styled.h2`
     text-align: center;
@@ -9,6 +15,7 @@ const StyledTitle = styled.h2`
 `
 const PopularProducts = styled.div`
     display: flex;
+    margin-left: 15px;
 `
 const LeftDiv = styled.div`
     float:left;
@@ -36,38 +43,42 @@ class Home extends React.PureComponent {
     render(){
         return(
             <div>
-                <StyledTitle>We Find The Best Deals For All Your Reptile Supplies</StyledTitle>
+                <StyledTitle>We Find The Best Value Deals</StyledTitle>
                 <Parent>
                     <div>
-                        <Image src={mouse} alt="mouse"/>
-                        <StyledTitle>25 Medium Mice</StyledTitle>
+                        <StyledTitle>25 Large Mice</StyledTitle>
+                        <StyledTitle>25 Rat Fuzzies</StyledTitle>
+                        <StyledTitle>5 Small Rats</StyledTitle>
+                        <StyledTitle>5 Medium Rats</StyledTitle>
                     </div>
                     <div>
-                        <Plus>+</Plus>
-                        <Image src={mouse} alt="mouse"/>
-                        <StyledTitle>10 Large Rats</StyledTitle>
-                    </div>  
+                        <StyledTitle>500 Large Silent Brown Crickets</StyledTitle>
+                        <StyledTitle>50 Medium Locusts</StyledTitle>
+                        <StyledTitle>500 Mealworms</StyledTitle>
+                    </div>
                     <div>
-                        <Plus>+</Plus>
-                        <Image src={mouse} alt="mouse"/>
-                        <StyledTitle>10 Weaner Rats</StyledTitle>
+                        <StyledTitle>10 Medium Rats</StyledTitle>
+                        <StyledTitle>10 Large Rats</StyledTitle>
+                        <StyledTitle>5 Medium Rats</StyledTitle>
                     </div>
                 </Parent>
+                <StyledTitle>Top Deals By Store</StyledTitle>
                 <StyledTitle>Popular Foods</StyledTitle>
                 <PopularProducts>
                     <LeftDiv>
+                        <Link to="/BrownCrickets"><Image src={browncricket} alt="mouse"/></Link>
+                        <StyledTitle>Brown Crickets</StyledTitle>
+                        <Link to="/Mice"><Image src={mouse} alt="mouse"/></Link>
                         <StyledTitle>Frozen Mice</StyledTitle>
-                        <Image src={mouse} alt="mouse"/>
-                        <StyledTitle>Crickets</StyledTitle>
-                        <Image src={mouse} alt="mouse"/>
                     </LeftDiv>
                     <RightDiv>
+                        <Link to="/Locusts"><Image src={locust} alt="mouse"/></Link>
+                        <StyledTitle>Locusts</StyledTitle>
+                        <Link to="/Rats"><Image src={rat} alt="mouse"/></Link>
                         <StyledTitle>Frozen Rats</StyledTitle>
-                        <Image src={mouse} alt="mouse"/>
-                        <StyledTitle>Mealworms</StyledTitle>
-                        <Image src={mouse} alt="mouse"/>
                     </RightDiv>
                 </PopularProducts>
+                <Footer/>
             </div>
         )
     }

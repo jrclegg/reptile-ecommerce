@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from '../../components/Image.js'
-import mouse from '../../assets/mouseother.jpg'
+import mouse from '../../assets/mouse.jpg'
 import { Link } from "react-router-dom";
+import Footer from '../../components/Footer'
 
 const Parent = styled.div`
     display: grid;
+    margin-left: 15px;
     margin-top: 30px;
     grid-template-columns: 1fr 1fr;
 `
@@ -42,6 +44,7 @@ class Mice extends React.Component {
         <FrozenLink to="/Mice/LargeMice">Large Mice</FrozenLink>
         <FrozenLink to="Mice/ExtraLargeMice">Extra Large Mice</FrozenLink>
       </Parent>
+      <Footer/>
       </div>
     )
   }

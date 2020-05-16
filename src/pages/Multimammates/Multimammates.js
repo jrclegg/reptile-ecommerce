@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from '../../components/Image.js'
-import mouse from '../../assets/mouseother.jpg'
+import multimammate from '../../assets/multimammate.jpg'
 import { Link } from "react-router-dom";
+import Footer from '../../components/Footer'
 
 const Parent = styled.div`
     display: grid;
     margin-top: 30px;
+    margin-left: 15px;
     grid-template-columns: 1fr 1fr;
 `
 const FrozenLink = styled(Link)`
@@ -19,15 +21,13 @@ class Multimammates extends React.Component {
     return (
       <div>
       <Parent>
-        <Link to="/Multis/Small"><Image src={mouse} alt="mouse"/></Link>
-        <Link to="/Multis/Large"><Image src={mouse} alt="mouse"/></Link>
-        <FrozenLink to="/Multis/Small">Small Multimammate Mice</FrozenLink>
-        <FrozenLink to="/Multis/Large">Large Multimammate Mice</FrozenLink>
+        <FrozenLink to="/Multis/Small"><Image src={multimammate} alt="mouse"/>Small Multimammate Mice</FrozenLink>
+        <FrozenLink to="/Multis/Large"><Image src={multimammate} alt="mouse"/>Large Multimammate Mice</FrozenLink>
       </Parent>
       <Parent>
-        <Link to="/Multis/ExtraLarge"><Image src={mouse} alt="mouse"/></Link>
-        <FrozenLink to="/Multis/ExtraLarge">Extra Large Multimammate Mice</FrozenLink>
+        <FrozenLink to="/Multis/ExtraLarge"><Image src={multimammate} alt="mouse"/>Extra Large Multimammate Mice</FrozenLink>
       </Parent>
+      <Footer/>
       </div>
     )
   }

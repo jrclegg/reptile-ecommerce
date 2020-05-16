@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from '../../components/Image.js'
-import mouse from '../../assets/mouseother.jpg'
+import brownCricket from '../../assets/browncricket.jpg'
 import { Link } from "react-router-dom";
+import Footer from '../../components/Footer'
 
 const Parent = styled.div`
     display: grid;
     margin-top: 30px;
+    margin-left: 15px;
     grid-template-columns: 1fr 1fr;
 `
 const FrozenLink = styled(Link)`
@@ -19,23 +21,30 @@ class BrownCrickets extends React.Component {
     return (
       <div>
       <Parent>
-        <Link to="/browncrickets/micro"><Image src={mouse} alt="mouse"/></Link>
-        <Link to="/browncrickets/small"><Image src={mouse} alt="mouse"/></Link>
+        <Link to="/browncrickets/micro"><Image src={brownCricket} alt="mouse"/></Link>
+        <Link to="/browncrickets/small"><Image src={brownCricket} alt="mouse"/></Link>
         <FrozenLink to="/browncrickets/micro">Micro Brown Crickets</FrozenLink>
         <FrozenLink to="/blackcrickets/small">Small Brown Crickets</FrozenLink>
       </Parent>
       <Parent>
-        <Link to="/browncrickets/mediumsmall"><Image src={mouse} alt="mouse"/></Link>
-        <Link to="/browncrickets/medium"><Image src={mouse} alt="mouse"/></Link>
+        <Link to="/browncrickets/mediumsmall"><Image src={brownCricket} alt="mouse"/></Link>
+        <Link to="/browncrickets/medium"><Image src={brownCricket} alt="mouse"/></Link>
         <FrozenLink to="/browncrickets/mediumsmall">Medium Small Brown Crickets</FrozenLink>
         <FrozenLink to="/browncrickets/medium">Medium Brown Crickets</FrozenLink>
       </Parent>
       <Parent>
-        <Link to="/browncrickets/large"><Image src={mouse} alt="mouse"/></Link>
-        <Link to="/browncrickets/extralarge"><Image src={mouse} alt="mouse"/></Link>
+        <Link to="/browncrickets/standard"><Image src={brownCricket} alt="mouse"/></Link>
+        <Link to="/browncrickets/standard"><Image src={brownCricket} alt="mouse"/></Link>
+        <FrozenLink to="/browncrickets/standard">Standard Brown Crickets</FrozenLink>
+        <FrozenLink to="/browncrickets/standard">Standard Brown Crickets</FrozenLink>
+      </Parent>
+      <Parent>
+        <Link to="/browncrickets/large"><Image src={brownCricket} alt="mouse"/></Link>
+        <Link to="/browncrickets/extralarge"><Image src={brownCricket} alt="mouse"/></Link>
         <FrozenLink to="/browncrickets/large">Large Brown Crickets</FrozenLink>
         <FrozenLink to="/browncrickets/extralarge">Extra Large Brown Crickets</FrozenLink>
       </Parent>
+      <Footer/>
       </div>
     )
   }
