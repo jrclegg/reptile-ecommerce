@@ -16,6 +16,7 @@ import Rabbits from './pages/Rabbits/Rabbit';
 import Locusts from './pages/Livefood/Locusts';
 import BlackCrickets from './pages/Livefood/BlackCrickets';
 import BrownCrickets from './pages/Livefood/BrownCrickets';
+
 import Basket from './pages/Cart'
 
 import GetProducts from './components/Product';
@@ -41,7 +42,7 @@ class App extends Component {
             <Route exact path="/mice/pinkies" render={() => { return (<GetProducts name="Pinkie Mice"/>); }}/>
             <Route exact path="/mice/largepinkies" render={() => { return (<GetProducts name="Large Pinkie Mice"/>); }}/>
             <Route exact path="/mice/fuzzies" render={() => { return (<GetProducts name="Mouse Fuzzies"/>); }}/>
-            <Route exact path="/mice/hoppers" render={() => { return (<GetProducts name="Hoppers"/>); }}/>
+            <Route exact path="/mice/hoppers" render={() => { return (<GetProducts name="Hopper Mice"/>); }}/>
             <Route exact path="/mice/smallmice" render={() => { return (<GetProducts name="Small Mice"/>); }}/>
             <Route exact path="/mice/mediummice" render={() => { return (<GetProducts name="Medium Mice"/>); }}/>
             <Route exact path="/mice/largemice" render={() => { return (<GetProducts name="Large Mice"/>); }}/>
@@ -84,24 +85,27 @@ class App extends Component {
             {/************* Locusts **********/}
             <Route exact path="/locusts/hatchlings" render={() => { return (<GetProducts name="Hatchling Locusts"/>); }}/>
             <Route exact path="/locusts/small" render={() => { return (<GetProducts name="Small Locusts"/>); }}/>
-            <Route exact path="/locusts/medium" render={() => { return (<GetProducts name="Medium Small Locusts"/>); }}/>
+            <Route exact path="/locusts/medium" render={() => { return (<GetProducts name="Medium Locusts"/>); }}/>
             <Route exact path="/locusts/large" render={() => { return (<GetProducts name="Large Locusts"/>); }}/>
             <Route exact path="/locusts/extralarge" render={() => { return (<GetProducts name="Extra Large Locusts"/>); }}/>
             <Route exact path="/locusts/adult" render={() => { return (<GetProducts name="Adult Locusts"/>); }}/>
-            {/************* Black Crickets **********/}
-            <Route exact path="/blackcrickets/micro" render={() => { return (<GetProducts name="Micro Silent Brown Crickets"/>); }}/>
-            <Route exact path="/blackcrickets/small" render={() => { return (<GetProducts name="Small Silent Brown Crickets"/>); }}/>
-            <Route exact path="/blackcrickets/mediumsmall" render={() => { return (<GetProducts name="Medium Silent Brown Crickets"/>); }}/>
-            <Route exact path="/blackcrickets/medium" render={() => { return (<GetProducts name="Standard Silent Brown Crickets"/>); }}/>
-            <Route exact path="/blackcrickets/large" render={() => { return (<GetProducts name="Large Silent Brown Crickets"/>); }} />
-            <Route exact path="/blackcrickets/extralarge" render={() => { return (<GetProducts name="Extra Large Silent Brown Crickets"/>); }}/>
             {/************* Brown Crickets **********/}
-            <Route exact path="/browncrickets/micro" render={() => { return (<GetProducts name="Micro Black Crickets"/>); }}/>
-            <Route exact path="/browncrickets/small" render={() => { return (<GetProducts name="Small Black Crickets"/>); }}/>
-            <Route exact path="/browncrickets/mediumsmall" render={() => { return (<GetProducts name="Medium Small Black Crickets"/>); }}/>
-            <Route exact path="/browncrickets/medium" render={() => { return (<GetProducts name="Medium Black Crickets"/>); }}/>
-            <Route exact path="/browncrickets/large" render={() => { return (<GetProducts name="Large Black Crickets"/>); }}/>
-            <Route exact path="/browncrickets/extralarge" render={() => { return (<GetProducts name="Extra Large Black Crickets"/>); }} />
+            <Route exact path="/browncrickets/micro" render={() => { return (<GetProducts name="Micro Silent Brown Crickets"/>); }}/>
+            <Route exact path="/browncrickets/small" render={() => { return (<GetProducts name="Small Silent Brown Crickets"/>); }}/>
+            <Route exact path="/browncrickets/mediumsmall" render={() => { return (<GetProducts name="Medium Small Silent Brown Crickets"/>); }}/>
+            <Route exact path="/browncrickets/medium" render={() => { return (<GetProducts name="Medium Silent Brown Crickets"/>); }}/>
+            <Route exact path="/browncrickets/standard" render={() => { return (<GetProducts name="Standard Silent Brown Crickets"/>); }} />
+            <Route exact path="/browncrickets/large" render={() => { return (<GetProducts name="Large Silent Brown Crickets"/>); }} />
+            <Route exact path="/browncrickets/extralarge" render={() => { return (<GetProducts name="Extra Large Silent Brown Crickets"/>); }}/>
+            {/************* Brown Crickets **********/}
+            <Route exact path="/blackcrickets/micro" render={() => { return (<GetProducts name="Micro Black Crickets"/>); }}/>
+            <Route exact path="/blackcrickets/small" render={() => { return (<GetProducts name="Small Black Crickets"/>); }}/>
+            <Route exact path="/blackcrickets/mediumsmall" render={() => { return (<GetProducts name="Medium Small Black Crickets"/>); }}/>
+            <Route exact path="/blackcrickets/medium" render={() => { return (<GetProducts name="Medium Black Crickets"/>); }}/>
+            <Route exact path="/blackcrickets/large" render={() => { return (<GetProducts name="Large Black Crickets"/>); }}/>
+            <Route exact path="/blackcrickets/extralarge" render={() => { return (<GetProducts name="Extra Large Black Crickets"/>); }} />
+            <Route exact path="/mealworms" render={() => { return (<GetProducts name="Mealworms"/>); }} />
+            <Route exact path="/waxworms" render={() => { return (<GetProducts name="Waxworms"/>); }} />
       </HashRouter>
     );
   }
