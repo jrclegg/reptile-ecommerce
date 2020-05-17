@@ -58,9 +58,17 @@ class App extends Component {
             <Route exact path="/rats/extralargerats" render={() => { return (<GetProducts name="Extra Large Rats"/>); }}/>
             <Route exact path="/rats/giantrats" render={() => { return (<GetProducts name="Giant Rats"/>); }}/>
             {/************* Multimammate Mice  **********/}
+            <Route exact path="/multis/extrasmall" render={() => { return (<GetProducts name="Extra Small Multimammate Mice"/>); }}/>
             <Route exact path="/multis/small" render={() => { return (<GetProducts name="Small Multimammate Mice"/>); }}/>
-            <Route exact path="/multis/large" render={() => { return (<GetProducts name="Medium/Large Multimammate Mice"/>); }}/>
+            <Route exact path="/multis/medium" render={() => { return (<GetProducts name="Medium Multimammate Mice"/>); }}/>
+            <Route exact path="/multis/large" render={() => { return (<GetProducts name="Large Multimammate Mice"/>); }}/>
             <Route exact path="/multis/extralarge" render={() => { return (<GetProducts name="Extra Large Multimammate Mice"/>); }}/>
+            <Route exact path="/multis/extraextralarge" render={() => { return (<GetProducts name="Extra Extra Large Multimammate Mice"/>); }}/>
+            <Route exact path="/multis/extraextraextralarge" render={() => { return (<GetProducts name="Extra Extra Extra Large Multimammate Mice"/>); }}/>
+            <Route exact path="/multis/extraextraextraextralarge" render={() => { return (<GetProducts name="Extra Extra Extra Extra Large Multimammate Mice"/>); }}/>
+            <Route exact path="/multis/extraextraextraextraextralarge" render={() => { return (<GetProducts name="Extra Large (5) Multimammate Mice"/>); }}/>
+            <Route exact path="/multis/extraextraextraextraextraextralarge" render={() => { return (<GetProducts name="Extra Large (6) Multimammate Mice"/>); }}/>
+
              {/************* Guinea Pigs  **********/}
             <Route exact path="/guineapigs/miniguineapigs" render={() => { return (<GetProducts name="Mini Guinea Pigs"/>); }}/>
             <Route exact path="/guineapigs/smallguineapigs"  render={() => { return (<GetProducts name="Small Guinea Pigs"/>); }}/>

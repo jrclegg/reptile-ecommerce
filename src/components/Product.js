@@ -25,11 +25,15 @@ import {Image, ListingImage,
 
   const PackWrapper = styled.div`
     padding: 0;
-    text-align: center;
+    margin-left: 5%;
     margin-bottom: 20px;
   `
+
+  const TextWrapper = styled.div`
+    margin-left: 5px;
+  `
   const Text = styled.p`
-    font-size: 13px;
+    font-size: 11px;
   `
   const LogoImage = styled.img`
     width: 100px;
@@ -173,20 +177,24 @@ import {Image, ListingImage,
                 </Parent>
                 {item.packs.map(pack =>
                   <div key={pack.quantity}>
-                      <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
+                      {/* <QuantityTitle>Pack of {pack.quantity}</QuantityTitle> */}
                       {pack.retailers
                           .sort((a,b) => a.price - b.price)
-                          .map(retailer =>
+                          .map(retailer => retailer.company_name === "BloodBall Reptiles" ?
                               <PackWrapper key={retailer.company_id}>
+                              <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
                               <WrapDiv>
                                 <LogoImage alt="companyLogo" src={retailer.company_logo}/>
-                                {
-                                  item.product_id < 52 ?
+                                {item.product_id < 52 ?
                                   <React.Fragment>
-                                    <Text>Delivery costs: from £{retailer.frozen_shipping}{this.ifCompanyIsOnlineReptileShop(retailer.company_name) ? '*' : ''}</Text>
+                                    <TextWrapper>
+                                      <Text>Delivery costs: </Text>
+                                      <Text>£{retailer.frozen_shipping}{this.ifCompanyIsOnlineReptileShop(retailer.company_name) ? '*' : ''}</Text>
+                                      <Text>£{retailer.frozen_shipping_extra}</Text>
                                       {this.ifCompanyIsOnlineReptileShop(retailer.company_name)}
                                       {this.ifCompanyIsEvolutionReptiles(retailer.company_name)}
-                                    <Text>{this.checkFreeShipping(retailer.free_shipping)}</Text>
+                                      <Text>{this.checkFreeShipping(retailer.free_shipping)}</Text>
+                                    </TextWrapper>
                                    </React.Fragment>
                                    : item.product_id >= 53 ?
                                    <React.Fragment>
@@ -203,12 +211,13 @@ import {Image, ListingImage,
                                     retailer.company_review ?
                                     <WrapDiv>
                                       <ReviewImage alt="companyReview" src={retailer.company_review}/>
-                                      <Link src={retailer.company_review_link}>{retailer.company_review_numbers}</Link>
+                                      <Link href={retailer.company_review_link}>{retailer.company_review_numbers}</Link>
                                     </WrapDiv>
                                     : <NoReview>Not Available</NoReview>
                                   }
                                   <LinkButton href={retailer.product_link} type="button">Go To Store</LinkButton>
                               </PackWrapper>
+                              : ''
                       )}
                   </div>
                 )}
