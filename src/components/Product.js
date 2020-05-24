@@ -25,25 +25,36 @@ import {Image, ListingImage,
 
   const PackWrapper = styled.div`
     padding: 0;
-    margin-left: 5%;
-    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-bottom: 40px;
   `
 
   const TextWrapper = styled.div`
     margin-left: 5px;
+    @media only screen and (max-width: 720px) {
+      display: none;
+    }
   `
   const Text = styled.p`
     font-size: 11px;
   `
   const LogoImage = styled.img`
-    width: 100px;
-    margin-left: 10px;
+    width: 30%;
+    margin-left: 6%;
     display: inline-block;
+    @media only screen and (min-width: 1024px) {
+      width: 23%;
+      margin-left: 12%;
+    }
   ` 
   const ReviewImage = styled.img`
     margin-left: 30px;
     width: 80px;
     display: block;
+    @media only screen and (max-width: 520px) {
+      display: none;
+    }
   ` 
   const NoReview = styled.p`
     margin-left: 30px;
@@ -58,22 +69,48 @@ import {Image, ListingImage,
     display: block;
     white-space: nowrap;
   `
+  const ReviewLink = styled.a`
+  margin-left: 30px;
+  margin-top: 5px;
+  font-size: 16px;
+  display: block;
+  white-space: nowrap;
+`
   const WrapDiv = styled.div`
     display: inline-block;
   `
-  const LinkButton = styled.a`
-   width: 100px;
-   height: 45px;
+  const WrapReview = styled(WrapDiv)`
+    display: inline-block;
+    margin: 10px;
+    @media only screen and (max-width: 720px) {
+      display: none;
+    }
+  `
+  const LinkButton = styled.button`
+   text-decoration: none;
+   color: white;
+   background: ${props => props.theme.colors.default};
    display: inline-block;
-   margin-left: 40px;
-   @media only screen and (min-width: 720px) {
-    width: 130px; 
-    height: 70px;
-    margin-bottom: 20px;
-    margin-right: 10px;
+   height: 50px;
+   width: 30%;
+   font-size: 18px;
+   left: 30px;
+   border-radius: 24px;
+   font-weight: bold;
+   position: relative;
+   top: -10px;
+   &:hover {
+    cursor: pointer;
+   }
+  @media only screen and (min-width: 720px) {
+    margin-top: 30px;
+    font-size: 30px;
+    height: 70px
+    margin-left: 30px;
   }
   @media only screen and (min-width: 1024px) {
-    width: 300px;
+    width: 25%;
+    border-radius: 35px;
   }
 `
 
@@ -171,6 +208,7 @@ import {Image, ListingImage,
             <div key={item.id} >
               {this.props.name === item.product_name ?
               <React.Fragment>
+                <PackWrapper>
                 <MainTitle>{item.product_name}</MainTitle>
                 <Parent>
                   <ListingImage src={this.filterFoodItemImage(item.product_name)}></ListingImage>
@@ -183,9 +221,8 @@ import {Image, ListingImage,
                           .map(retailer => retailer.company_name === "BloodBall Reptiles" ?
                               <PackWrapper key={retailer.company_id}>
                               <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
-                              <WrapDiv>
                                 <LogoImage alt="companyLogo" src={retailer.company_logo}/>
-                                {item.product_id < 52 ?
+                                {/* {item.product_id < 52 ?
                                   <React.Fragment>
                                     <TextWrapper>
                                       <Text>Delivery costs: </Text>
@@ -198,29 +235,31 @@ import {Image, ListingImage,
                                    </React.Fragment>
                                    : item.product_id >= 53 ?
                                    <React.Fragment>
-                                    <Text>Delivery costs: from £{retailer.live_shipping}{this.ifCompanyIsOnlineReptileShop(retailer.company_name) ? '*' : ''}</Text>
-                                    {this.ifCompanyIsOnlineReptileShop(retailer.company_name)}
-                                    {this.ifCompanyIsEvolutionReptiles(retailer.company_name)}
-                                    <Text>{this.checkFreeShipping(retailer.free_shipping)}</Text>
+                                    <TextWrapper>
+                                      <Text>Delivery costs: from £{retailer.live_shipping}{this.ifCompanyIsOnlineReptileShop(retailer.company_name) ? '*' : ''}</Text>
+                                      {this.ifCompanyIsOnlineReptileShop(retailer.company_name)}
+                                      {this.ifCompanyIsEvolutionReptiles(retailer.company_name)}
+                                      <Text>{this.checkFreeShipping(retailer.free_shipping)}</Text>
+                                    </TextWrapper>
                                   </React.Fragment>
                                    : ''
-                                }
-                              </WrapDiv>
-                                  <QuantityDescription>£{retailer.price.toFixed(2)} </QuantityDescription>
-                                  {
+                                } */}
+                                  <QuantityDescription>£{retailer.price.toFixed(2)}</QuantityDescription>
+                                  {/* {
                                     retailer.company_review ?
-                                    <WrapDiv>
+                                    <WrapReview>
                                       <ReviewImage alt="companyReview" src={retailer.company_review}/>
-                                      <Link href={retailer.company_review_link}>{retailer.company_review_numbers}</Link>
-                                    </WrapDiv>
+                                      <ReviewLink href={retailer.company_review_link}>{retailer.company_review_numbers}</ReviewLink>
+                                    </WrapReview>
                                     : <NoReview>Not Available</NoReview>
-                                  }
-                                  <LinkButton href={retailer.product_link} type="button">Go To Store</LinkButton>
+                                  } */}
+                                  <a href={retailer.product_link}><LinkButton type="button">Go To Store</LinkButton></a>
                               </PackWrapper>
                               : ''
                       )}
                   </div>
                 )}
+                  </PackWrapper>
                    <Footer/>
                 </React.Fragment>
                 : ''
