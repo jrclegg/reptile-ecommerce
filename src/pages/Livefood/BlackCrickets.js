@@ -4,6 +4,7 @@ import Image from '../../components/Image.js'
 import blackCricket from '../../assets/blackcricket.jpg'
 import { Link } from "react-router-dom";
 import Footer from '../../components/Footer'
+import MainTitle from '../../components/MainTitle'
 
 const Parent = styled.div`
     display: grid;
@@ -14,12 +15,16 @@ const Parent = styled.div`
 const FrozenLink = styled(Link)`
   font-size: 20px;
   text-align: center;
+  @media only screen and (min-width: 720px) {
+    font-size: 26px;
+  }
 `
 
 class BlackCrickets extends React.Component {
   render() {
     return (
       <div>
+        <MainTitle>Black Crickets</MainTitle>
       <Parent>
         <Link to="/blackcrickets/micro"><Image src={blackCricket} alt="mouse"/></Link>
         <Link to="/blackcrickets/small"><Image src={blackCricket} alt="mouse"/></Link>

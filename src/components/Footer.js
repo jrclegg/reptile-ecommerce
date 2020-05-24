@@ -6,6 +6,7 @@ const FooterNav = styled.div`
   background: ${props => props.theme.colors.default};
   display: block;
   padding-bottom: 170px;
+  margin-top: 30px;
 `
 
 const Wrapper = styled.div`

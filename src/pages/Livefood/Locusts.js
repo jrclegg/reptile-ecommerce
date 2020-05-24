@@ -5,6 +5,7 @@ import mouse from '../../assets/mouseother.jpg'
 import locust from '../../assets/locust.jpg'
 import { Link } from "react-router-dom";
 import Footer from '../../components/Footer'
+import MainTitle from '../../components/MainTitle.js';
 
 const Parent = styled.div`
     display: grid;
@@ -15,12 +16,16 @@ const Parent = styled.div`
 const FrozenLink = styled(Link)`
   font-size: 20px;
   text-align: center;
+  @media only screen and (min-width: 720px) {
+    font-size: 26px;
+  }
 `
 
 class Locusts extends React.Component {
   render() {
     return (
       <div>
+        <MainTitle>Locusts</MainTitle>
       <Parent>
         <Link to="/Locusts/Hatchlings"><Image src={locust} alt="mouse"/></Link>
         <Link to="/Locusts/Small"><Image src={locust} alt="mouse"/></Link>

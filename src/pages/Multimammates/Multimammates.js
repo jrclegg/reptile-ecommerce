@@ -4,6 +4,7 @@ import Image from '../../components/Image.js'
 import multimammate from '../../assets/multimammate.jpg'
 import { Link } from "react-router-dom";
 import Footer from '../../components/Footer'
+import MainTitle from '../../components/MainTitle'
 
 const Parent = styled.div`
     display: grid;
@@ -14,12 +15,16 @@ const Parent = styled.div`
 const FrozenLink = styled(Link)`
   font-size: 20px;
   text-align: center;
+  @media only screen and (min-width: 720px) {
+    font-size: 26px;
+  }
 `
 
 class Multimammates extends React.Component {
   render() {
     return (
       <div>
+        <MainTitle>Multimammate Mice</MainTitle>
       <Parent>
       <FrozenLink to="/Multis/ExtraSmall"><Image src={multimammate} alt="mouse"/>Extra Small Multimammate Mice</FrozenLink>
         <FrozenLink to="/Multis/Small"><Image src={multimammate} alt="mouse"/>Small Multimammate Mice</FrozenLink>

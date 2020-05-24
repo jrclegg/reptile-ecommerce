@@ -4,6 +4,8 @@ import Image from '../../components/Image.js'
 import rat from '../../assets/rat.jpg'
 import { Link } from "react-router-dom";
 import Footer from '../../components/Footer'
+import MainTitle from '../../components/MainTitle';
+
 
 const Parent = styled.div`
     display: grid;
@@ -14,12 +16,16 @@ const Parent = styled.div`
 const FrozenLink = styled(Link)`
   font-size: 20px;
   text-align: center;
+  @media only screen and (min-width: 720px) {
+    font-size: 26px;
+  }
 `
 
 class Rats extends React.Component {
   render() {
     return (
       <div>
+        <MainTitle>Rats</MainTitle>
       <Parent>
         <FrozenLink to="/Rats/RatPups"><Image src={rat} alt="mouse"/>Rat Pups</FrozenLink>
         <FrozenLink to="/Rats/RatFuzzies"><Image src={rat} alt="mouse"/>Rat Fuzzies</FrozenLink>

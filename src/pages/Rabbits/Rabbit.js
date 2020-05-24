@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import Image from '../../components/Image.js'
 import rabbit from '../../assets/rabbit.jpg'
 import { Link } from "react-router-dom";
-import Footer from '../../components/Footer'
+import Footer from '../../components/Footer';
+import MainTitle from '../../components/MainTitle';
 
 const Parent = styled.div`
     display: grid;
@@ -14,12 +15,16 @@ const Parent = styled.div`
 const FrozenLink = styled(Link)`
   font-size: 20px;
   text-align: center;
+  @media only screen and (min-width: 720px) {
+    font-size: 26px;
+  }
 `
 
 class Rabbits extends React.Component {
   render() {
     return (
       <div>
+        <MainTitle>Rabbits</MainTitle>
       <Parent>
         <FrozenLink to="/Rabbits/DayOldRabbits"><Image src={rabbit} alt="mouse"/>Day Old Rabbits</FrozenLink>
         <FrozenLink to="/Rabbits/MiniRabbits"><Image src={rabbit} alt="mouse"/>Mini Rabbits</FrozenLink>

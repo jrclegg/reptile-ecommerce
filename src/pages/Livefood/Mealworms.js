@@ -4,6 +4,7 @@ import Image from '../../components/Image.js'
 import mouse from '../../assets/mouseother.jpg'
 import { Link } from "react-router-dom";
 import Footer from '../../components/Footer'
+import MainTitle from '../../components/MainTitle'
 
 
 const Parent = styled.div`
@@ -14,6 +15,9 @@ const Parent = styled.div`
 const FrozenLink = styled(Link)`
   font-size: 20px;
   text-align: center;
+  @media only screen and (min-width: 720px) {
+    font-size: 26px;
+  }
 `
 
 class Mealworms extends React.Component {
