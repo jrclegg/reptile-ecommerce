@@ -16,6 +16,7 @@ import Rabbits from './pages/Rabbits/Rabbit';
 import Locusts from './pages/Livefood/Locusts';
 import BlackCrickets from './pages/Livefood/BlackCrickets';
 import BrownCrickets from './pages/Livefood/BrownCrickets';
+import Blog from './pages/Blog';
 
 import Basket from './pages/Cart'
 
@@ -27,6 +28,7 @@ class App extends Component {
       <HashRouter>
           <Nav/>
             <Route exact path="/" component={Home}/>
+            <Route exact path="/blog" component={Blog}/>
             <Route path="/frozenfood" component={FrozenFood}/>
             <Route path="/livefood" component={Livefood}/>
             <Route exact path="/mice/" component={Mice}/>
@@ -42,7 +44,7 @@ class App extends Component {
             <Route exact path="/mice/pinkies" render={() => { return (<GetProducts name="Pinkie Mice"/>); }}/>
             <Route exact path="/mice/largepinkies" render={() => { return (<GetProducts name="Large Pinkie Mice"/>); }}/>
             <Route exact path="/mice/fuzzies" render={() => { return (<GetProducts name="Mouse Fuzzies"/>); }}/>
-            <Route exact path="/mice/hoppers" render={() => { return (<GetProducts name="Hopper Mice"/>); }}/>
+            <Route exact path="/mice/hoppers" render={() => { return (<GetProducts name="Hoppers"/>); }}/>
             <Route exact path="/mice/smallmice" render={() => { return (<GetProducts name="Small Mice"/>); }}/>
             <Route exact path="/mice/mediummice" render={() => { return (<GetProducts name="Medium Mice"/>); }}/>
             <Route exact path="/mice/largemice" render={() => { return (<GetProducts name="Large Mice"/>); }}/>

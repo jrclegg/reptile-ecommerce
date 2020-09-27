@@ -11,7 +11,6 @@ import Footer from '../components/Footer'
 
 const StyledTitle = styled.h2`
     text-align: center;
-    font-size: 20px;
 `
 const PopularProducts = styled.div`
     display: flex;
@@ -43,7 +42,7 @@ class Home extends React.PureComponent {
     render(){
         return(
             <div>
-                <StyledTitle>We Find The Best Value Deals</StyledTitle>
+                {/* <StyledTitle>We Find The Best Value Deals</StyledTitle>
                 <Parent>
                     <div>
                         <StyledTitle>25 Large Mice</StyledTitle>
@@ -61,21 +60,21 @@ class Home extends React.PureComponent {
                         <StyledTitle>10 Large Rats</StyledTitle>
                         <StyledTitle>5 Medium Rats</StyledTitle>
                     </div>
-                </Parent>
-                <StyledTitle>Top Deals By Store</StyledTitle>
+                </Parent> */}
+                {/* <StyledTitle>Top Deals By Store</StyledTitle> */}
                 <StyledTitle>Popular Foods</StyledTitle>
                 <PopularProducts>
                     <LeftDiv>
-                        <Link to="/BrownCrickets"><Image src={browncricket} alt="mouse"/></Link>
                         <StyledTitle>Brown Crickets</StyledTitle>
-                        <Link to="/Mice"><Image src={mouse} alt="mouse"/></Link>
+                        <Link to="/BrownCrickets"><Image src={browncricket} alt="mouse"/></Link>
                         <StyledTitle>Frozen Mice</StyledTitle>
+                        <Link to="/Mice"><Image src={mouse} alt="mouse"/></Link>
                     </LeftDiv>
                     <RightDiv>
-                        <Link to="/Locusts"><Image src={locust} alt="mouse"/></Link>
                         <StyledTitle>Locusts</StyledTitle>
-                        <Link to="/Rats"><Image src={rat} alt="mouse"/></Link>
+                        <Link to="/Locusts"><Image src={locust} alt="mouse"/></Link>
                         <StyledTitle>Frozen Rats</StyledTitle>
+                        <Link to="/Rats"><Image src={rat} alt="mouse"/></Link>
                     </RightDiv>
                 </PopularProducts>
                 <Footer/>

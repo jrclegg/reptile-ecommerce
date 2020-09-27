@@ -187,6 +187,8 @@ import {Image, ListingImage,
       }
     }
 
+
+
     ifCompanyIsEvolutionReptiles(companyName){
       if (companyName === "Evolution Reptiles"){
         return (
@@ -209,18 +211,17 @@ import {Image, ListingImage,
               {this.props.name === item.product_name ?
               <React.Fragment>
                 <PackWrapper>
-                <MainTitle>{item.product_name}</MainTitle>
+                <MainTitle>{item.product_name} ({item.product_weight})</MainTitle>
                 <Parent>
                   <ListingImage src={this.filterFoodItemImage(item.product_name)}></ListingImage>
                 </Parent>
                 {item.packs.map(pack =>
                   <div key={pack.quantity}>
-                      {/* <QuantityTitle>Pack of {pack.quantity}</QuantityTitle> */}
-                      {pack.retailers
+                      <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
+                      {pack.retailers 
                           .sort((a,b) => a.price - b.price)
-                          .map(retailer => retailer.company_name === "BloodBall Reptiles" ?
+                          .map(retailer => 
                               <PackWrapper key={retailer.company_id}>
-                              <QuantityTitle>Pack of {pack.quantity}</QuantityTitle>
                                 <LogoImage alt="companyLogo" src={retailer.company_logo}/>
                                 {/* {item.product_id < 52 ?
                                   <React.Fragment>
@@ -255,7 +256,6 @@ import {Image, ListingImage,
                                   } */}
                                   <a href={retailer.product_link}><LinkButton type="button">Go To Store</LinkButton></a>
                               </PackWrapper>
-                              : ''
                       )}
                   </div>
                 )}

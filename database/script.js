@@ -6,7 +6,7 @@ var app = express();
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'password',
+    password: 'root',
     database: 'reptile_ecommerce'
 });
 
@@ -21,7 +21,7 @@ connection.connect(function (error){
 
 app.get('/projects', function(request, response){
   response.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-  connection.query("SELECT a.ProductID, b.ProductName, b.ProductWeight, c.CompanyID, c.CompanyName, c.CompanyReview, c.CompanyReviewLink, c.CompanyReviewNumbers, c.FrozenShipping, c.FreeShipping, c.CompanyLogo, c.CompanyLogo, a.Quantity, a.Price FROM reptile_ecommerce.prices a LEFT OUTER JOIN reptile_ecommerce.products b ON a.ProductID = b.ProductID LEFT OUTER JOIN reptile_ecommerce.companies c ON c.CompanyID = a.CompanyID ORDER BY a.CompanyID, a.Quantity", function (error, rows, fields){
+  connection.query("SELECT a.ProductID, b.ProductName, b.ProductWeight, c.CompanyID, c.CompanyName, c.CompanyReview, c.CompanyReviewLink, c.CompanyReviewNumbers, c.FrozenShipping, c.FreeShipping, c.CompanyLogo, c.CompanyLogo, a.Quantity, a.Price, a.ProductLink FROM reptile_ecommerce.prices a LEFT OUTER JOIN reptile_ecommerce.products b ON a.ProductID = b.ProductID LEFT OUTER JOIN reptile_ecommerce.companies c ON c.CompanyID = a.CompanyID WHERE (a.CompanyID = 38) ORDER BY a.CompanyID, a.Quantity", function (error, rows, fields){
       //callback
       if(error){
         console.log(error)
@@ -37,6 +37,7 @@ app.get('/projects', function(request, response){
               "$group[retailers](CompanyID)":{
                 "price": "Price",
                 "product_id": "ProductID",
+                "product_link": "ProductLink",
                 "company_name": "CompanyName",
                 "company_review": "CompanyReview",
                 "company_review_link": "CompanyReviewLink",
@@ -44,6 +45,7 @@ app.get('/projects', function(request, response){
                 "frozen_shipping": "FrozenShipping",
                 "free_shipping": "FreeShipping",
                 "company_logo": "CompanyLogo",
+                "company_id": "CompanyID",
                 "product_name": "ProductName",
                 "quantity": "Quantity",
                 "total": "Total",

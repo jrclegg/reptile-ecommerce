@@ -12,3 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.fas.fa-chevron-up {
+  margin-top: 10px;
+  color: black;
+}
