@@ -14,7 +14,7 @@ const Form = styled.form`
 class Subscribe extends React.Component {
   render() {
     return (
-  <div id="mc_embed_signup">
+<div id="mc_embed_signup">
     <link
     href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css"
     rel="stylesheet"
@@ -30,21 +30,21 @@ class Subscribe extends React.Component {
       noValidate
     >
       <div id="mc_embed_signup_scroll">
-        <label style={{color: 'white', fontSize: '16px'}} htmlFor="mce-EMAIL">Subscribe</label>
+        <label style={{color: 'white', fontSize: '20px'}} htmlFor="mce-EMAIL">Get the best deals</label>
         <input
-          style={{width: '170px'}}
+          style={{width: '184px', fontSize: '18px'}}
           type="email"
           name="EMAIL"
           className="email"
           id="mce-EMAIL"
-          placeholder="email address"
+          placeholder="Email address"
           required
         />
         <div className="clear">
           <input
-            style={{width: '170px'}}
+            style={{width: '196px', background: 'blue', fontWeight: 'bold', height: '40px'}}
             type="submit"
-            defaultValue="Subscribe"
+            value="SUBSCRIBE"
             name="subscribe"
             id="mc-embedded-subscribe"
             className="button"

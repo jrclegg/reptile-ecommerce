@@ -40,7 +40,8 @@ import {Image, ListingImage,
     font-size: 11px;
   `
   const LogoImage = styled.img`
-    width: 30%;
+    max-width: 30%;
+    max-height: 300px;
     margin-left: 6%;
     display: inline-block;
     @media only screen and (min-width: 1024px) {

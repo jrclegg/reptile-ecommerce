@@ -21,7 +21,7 @@ connection.connect(function (error){
 
 app.get('/projects', function(request, response){
   response.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-  connection.query("SELECT a.ProductID, b.ProductName, b.ProductWeight, c.CompanyID, c.CompanyName, c.CompanyReview, c.CompanyReviewLink, c.CompanyReviewNumbers, c.FrozenShipping, c.FreeShipping, c.CompanyLogo, c.CompanyLogo, a.Quantity, a.Price, a.ProductLink FROM reptile_ecommerce.prices a LEFT OUTER JOIN reptile_ecommerce.products b ON a.ProductID = b.ProductID LEFT OUTER JOIN reptile_ecommerce.companies c ON c.CompanyID = a.CompanyID WHERE (a.CompanyID = 38) ORDER BY a.CompanyID, a.Quantity", function (error, rows, fields){
+  connection.query("SELECT a.ProductID, b.ProductName, b.ProductWeight, c.CompanyID, c.CompanyName, c.CompanyReview, c.CompanyReviewLink, c.CompanyReviewNumbers, c.FrozenShipping, c.FreeShipping, c.CompanyLogo, c.CompanyLogo, a.Quantity, a.Price, a.ProductLink FROM reptile_ecommerce.prices a LEFT OUTER JOIN reptile_ecommerce.products b ON a.ProductID = b.ProductID LEFT OUTER JOIN reptile_ecommerce.companies c ON c.CompanyID = a.CompanyID WHERE (a.CompanyID = 6 || a.CompanyID = 18 ||  a.CompanyID = 24 || a.CompanyID = 38 || a.CompanyID = 39) ORDER BY a.CompanyID, a.Quantity", function (error, rows, fields){
       //callback
       if(error){
         console.log(error)
